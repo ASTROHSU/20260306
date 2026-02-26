@@ -300,12 +300,12 @@
             const [currentSlide, setCurrentSlide] = useState(0);
 
             const nextSlide = useCallback(() => {
-                if (currentSlide < slides.length - 1) setCurrentSlide(c => c + 1);
-            }, [currentSlide]);
+                setCurrentSlide(c => (c + 1) % slides.length);
+            }, []);
 
             const prevSlide = useCallback(() => {
-                if (currentSlide > 0) setCurrentSlide(c => c - 1);
-            }, [currentSlide]);
+                setCurrentSlide(c => (c - 1 + slides.length) % slides.length);
+            }, []);
 
             useEffect(() => {
                 const handleKeyDown = (e) => {
@@ -416,8 +416,8 @@
                             <span className="font-bold text-slate-800 tracking-tight text-sm md:text-xl">區塊勢 <span className="text-slate-300 mx-2">×</span> Dinngo</span>
                         </div>
                         <div className="flex items-center gap-6">
-                            <button onClick={prevSlide} disabled={currentSlide === 0}
-                                className={`p-2 rounded-full transition-all transform hover:scale-105 ${currentSlide === 0 ? 'text-slate-200 cursor-not-allowed' : 'text-slate-700 bg-slate-100 hover:bg-slate-200 active:bg-slate-300'}`}>
+                            <button onClick={prevSlide}
+                                className="p-2 rounded-full transition-all transform hover:scale-105 text-slate-700 bg-slate-100 hover:bg-slate-200 active:bg-slate-300">
                                 <IconArrowLeft />
                             </button>
                             <div className="hidden md:flex gap-3">
@@ -426,8 +426,8 @@
                                         className={`h-2 rounded-full transition-all duration-300 ${idx === currentSlide ? 'bg-amber-500 w-10' : 'bg-slate-300 w-2 hover:bg-slate-400 hover:scale-125'}`} />
                                 ))}
                             </div>
-                            <button onClick={nextSlide} disabled={currentSlide === slides.length - 1}
-                                className={`p-2 rounded-full transition-all transform hover:scale-105 ${currentSlide === slides.length - 1 ? 'text-slate-200 cursor-not-allowed' : 'text-slate-700 bg-slate-100 hover:bg-slate-200 active:bg-slate-300'}`}>
+                            <button onClick={nextSlide}
+                                className="p-2 rounded-full transition-all transform hover:scale-105 text-slate-700 bg-slate-100 hover:bg-slate-200 active:bg-slate-300">
                                 <IconArrowRight />
                             </button>
                         </div>
