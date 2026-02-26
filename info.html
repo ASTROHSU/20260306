@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今日活動資訊 | 企業 Web3 實戰工作坊</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 py-8 md:py-12">
+        <!-- 標題 -->
+        <header class="text-center mb-12">
+            <span class="inline-block bg-amber-100 text-amber-800 py-2 px-4 rounded-full text-sm font-bold tracking-wide uppercase mb-4">Workshop Info</span>
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">今日活動資訊</h1>
+            <p class="text-lg text-slate-500">企業 Web3 實戰工作坊 · 區塊勢 × Dinngo</p>
+        </header>
+
+        <!-- Wi-Fi 資訊（最常用，放最上面） -->
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 mb-6">
+            <h2 class="flex items-center gap-3 text-xl font-bold text-slate-800 mb-4 border-l-4 border-amber-500 pl-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1"/></svg>
+                Wi-Fi 網路
+            </h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
+                    <p class="text-sm text-slate-500 mb-1">網路名稱</p>
+                    <p class="text-xl font-mono font-bold text-slate-800">請向工作人員索取</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
+                    <p class="text-sm text-slate-500 mb-1">密碼</p>
+                    <p class="text-xl font-mono font-bold text-slate-800">請向工作人員索取</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 今日時間表 -->
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 mb-6">
+            <h2 class="flex items-center gap-3 text-xl font-bold text-slate-800 mb-6 border-l-4 border-amber-500 pl-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                今日時間表
+            </h2>
+            <div class="space-y-4">
+                <div class="flex gap-4 p-4 bg-amber-50 rounded-xl border border-amber-100">
+                    <span class="font-mono font-bold text-amber-800 w-20 shrink-0">09:00</span>
+                    <div>
+                        <p class="font-bold text-slate-800">報到</p>
+                        <p class="text-slate-600 text-sm">入場、領取資料</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                    <span class="font-mono font-bold text-slate-700 w-20 shrink-0">09:30</span>
+                    <div>
+                        <p class="font-bold text-slate-800">Part 1 · 入門比特幣</p>
+                        <p class="text-slate-600 text-sm">價值載體數位化、中間人問題、比特幣解法</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                    <span class="font-mono font-bold text-slate-700 w-20 shrink-0">10:45</span>
+                    <div>
+                        <p class="font-bold text-slate-800">休息</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                    <span class="font-mono font-bold text-slate-700 w-20 shrink-0">11:00</span>
+                    <div>
+                        <p class="font-bold text-slate-800">Part 2 · 幣圈的銅臭味</p>
+                        <p class="text-slate-600 text-sm">穩定幣、套利、改寫金融規則</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 p-4 bg-green-50 rounded-xl border border-green-100">
+                    <span class="font-mono font-bold text-green-800 w-20 shrink-0">12:00</span>
+                    <div>
+                        <p class="font-bold text-slate-800">午餐</p>
+                        <p class="text-slate-600 text-sm">請自行前往附近用餐（見下方「附近餐飲」）</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                    <span class="font-mono font-bold text-slate-700 w-20 shrink-0">13:00</span>
+                    <div>
+                        <p class="font-bold text-slate-800">Part 3 · 常用工具實戰</p>
+                        <p class="text-slate-600 text-sm">錢包、Visa 卡、跨境投資</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                    <span class="font-mono font-bold text-slate-700 w-20 shrink-0">14:15</span>
+                    <div>
+                        <p class="font-bold text-slate-800">休息</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                    <span class="font-mono font-bold text-slate-700 w-20 shrink-0">14:30</span>
+                    <div>
+                        <p class="font-bold text-slate-800">Part 4 · Q&A</p>
+                        <p class="text-slate-600 text-sm">互動提問與討論</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 p-4 bg-slate-800 rounded-xl border border-slate-700 text-white">
+                    <span class="font-mono font-bold text-amber-300 w-20 shrink-0">17:00</span>
+                    <div>
+                        <p class="font-bold">下課</p>
+                        <p class="text-slate-300 text-sm">感謝參與！</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 場地配置 -->
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 mb-6">
+            <h2 class="flex items-center gap-3 text-xl font-bold text-slate-800 mb-4 border-l-4 border-amber-500 pl-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                場地配置
+            </h2>
+            <div class="space-y-4">
+                <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                    <p class="text-sm text-slate-500 mb-1">場地地址</p>
+                    <p class="font-bold text-slate-800">請向工作人員確認</p>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                    <p class="text-sm text-slate-500 mb-1">廁所位置</p>
+                    <p class="font-bold text-slate-800">請向工作人員確認</p>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                    <p class="text-sm text-slate-500 mb-1">茶水區</p>
+                    <p class="font-bold text-slate-800">請向工作人員確認</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 午餐與附近餐飲 -->
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 mb-6">
+            <h2 class="flex items-center gap-3 text-xl font-bold text-slate-800 mb-4 border-l-4 border-amber-500 pl-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" x2="6" y1="1" y2="4"/><line x1="10" x2="10" y1="1" y2="4"/><line x1="14" x2="14" y1="1" y2="4"/></svg>
+                午餐與附近餐飲
+            </h2>
+            <div class="space-y-4">
+                <div class="p-4 bg-amber-50 rounded-xl border border-amber-100">
+                    <p class="font-bold text-slate-800 mb-2">午餐安排</p>
+                    <p class="text-slate-600">12:00–13:00 為午餐時間，請自行前往附近用餐。</p>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                    <p class="font-bold text-slate-800 mb-2">附近餐飲</p>
+                    <p class="text-slate-600">請向工作人員索取附近餐廳推薦或地圖。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 我們提供的服務 -->
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 mb-6">
+            <h2 class="flex items-center gap-3 text-xl font-bold text-slate-800 mb-4 border-l-4 border-amber-500 pl-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                我們提供的服務
+            </h2>
+            <ul class="space-y-3">
+                <li class="flex items-start gap-3">
+                    <span class="text-amber-500 font-bold">•</span>
+                    <span>Slido 即時互動問答（活動代碼 #tax1023）</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-amber-500 font-bold">•</span>
+                    <span>課程講義與投影片</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-amber-500 font-bold">•</span>
+                    <span>課後問卷填寫送訂閱（SurveyCake）</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-amber-500 font-bold">•</span>
+                    <span>講師 Q&A 互動</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-amber-500 font-bold">•</span>
+                    <span>Wi-Fi 網路</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 連結到投影片 -->
+        <div class="text-center mt-8">
+            <a href="presentation.html" class="inline-flex items-center gap-2 px-8 py-4 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-full shadow-lg transition-all hover:scale-105">
+                進入課程投影片 →
+            </a>
+        </div>
+
+        <footer class="text-center mt-12 text-slate-400 text-sm">
+            區塊勢 × Dinngo | blocktrend.today
+        </footer>
+    </div>
+</body>
+</html>
