@@ -100,43 +100,189 @@
                 layout: 'split',
                 tag: "我的故事",
                 title: "我也不信",
+                leftClasses: "md:w-[55%] flex-shrink-0",
+                rightClasses: "md:w-[45%]",
                 leftContent: (
-                    <div className="aspect-video bg-slate-100 rounded-2xl border-2 border-slate-200 flex items-center justify-center overflow-hidden">
-                        <img src="https://duk.tw/suK7fD.png" alt="以太坊礦機" className="w-full h-full object-contain rounded-2xl" />
+                    <div className="w-full h-full min-h-[300px] bg-slate-100 rounded-2xl border-2 border-slate-200 flex items-center justify-center overflow-hidden p-2">
+                        <img src="https://duk.tw/suK7fD.png" alt="以太坊礦機" className="w-full h-full object-contain rounded-xl drop-shadow-sm" />
                     </div>
                 ),
                 rightContent: (
-                    <div className="aspect-video bg-slate-100 rounded-2xl border-2 border-slate-200 flex items-center justify-center overflow-hidden">
-                        <img src="https://duk.tw/suK7fD.png" alt="當年照片" className="w-full h-full object-contain rounded-2xl" />
+                    <div className="h-full flex flex-col justify-center">
+                        <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100">
+                            <h3 className="text-xl md:text-2xl font-bold text-slate-800 mb-6">2017 年成為 ETH 礦工</h3>
+                            <ul className="space-y-5 text-lg md:text-xl text-slate-700 font-medium">
+                                <li className="flex items-center">
+                                    <span className="text-amber-500 mr-3 text-2xl leading-none">•</span>
+                                    <span>兩張主機板，四張顯示卡</span>
+                                </li>
+                                <li className="flex items-center">
+                                    <span className="text-amber-500 mr-3 text-2xl leading-none">•</span>
+                                    <span>白天當兵，礦機在家</span>
+                                </li>
+                                <li className="flex items-center">
+                                    <span className="text-amber-500 mr-3 text-2xl leading-none">•</span>
+                                    <span>電費暴漲十倍</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                )
+            },
+            {
+                id: 4,
+                layout: 'detail',
+                tag: "我的故事",
+                title: "挖礦付電費",
+                content: (
+                    <div className="flex flex-col items-center justify-center h-full w-full py-8 md:py-12">
+                        <div className="relative w-full max-w-5xl mx-auto">
+                            {/* 卡片層 */}
+                            <div className="flex flex-col md:flex-row w-full items-center justify-between gap-4 z-10 relative">
+                                {/* 1. 礦機 */}
+                                <div className="flex flex-col items-center justify-center p-6 bg-white rounded-2xl border-2 border-slate-200 w-full md:w-[22%] aspect-[4/3] md:aspect-square relative z-10 shadow-sm transition-transform hover:-translate-y-1">
+                                    <span className="text-4xl md:text-5xl mb-3">🖥️</span>
+                                    <p className="font-bold text-base md:text-lg text-slate-800">礦機運作</p>
+                                    <p className="text-xs md:text-sm text-slate-500 mt-1">消耗電力與算力</p>
+                                </div>
+                                
+                                <span className="text-2xl text-slate-300 font-bold hidden md:block">→</span>
+                                <span className="text-2xl text-slate-300 font-bold md:hidden">↓</span>
+
+                                {/* 2. ETH */}
+                                <div className="flex flex-col items-center justify-center p-6 bg-blue-50 rounded-2xl border-2 border-blue-200 w-full md:w-[22%] aspect-[4/3] md:aspect-square relative z-10 shadow-sm transition-transform hover:-translate-y-1">
+                                    <span className="text-4xl md:text-5xl mb-3 font-bold text-blue-500">Ξ</span>
+                                    <p className="font-bold text-base md:text-lg text-blue-900">賺得 ETH</p>
+                                    <p className="text-xs md:text-sm text-blue-600/70 mt-1">取得挖礦獎勵</p>
+                                </div>
+
+                                <span className="text-2xl text-slate-300 font-bold hidden md:block">→</span>
+                                <span className="text-2xl text-slate-300 font-bold md:hidden">↓</span>
+
+                                {/* 3. 交易所 */}
+                                <div className="flex flex-col items-center justify-center p-6 bg-purple-50 rounded-2xl border-2 border-purple-200 w-full md:w-[22%] aspect-[4/3] md:aspect-square relative z-10 shadow-sm transition-transform hover:-translate-y-1">
+                                    <span className="text-4xl md:text-5xl mb-3">🏛️</span>
+                                    <p className="font-bold text-base md:text-lg text-purple-900">中心化交易所</p>
+                                    <p className="text-xs md:text-sm text-purple-600/70 mt-1">ETH 換成新台幣</p>
+                                </div>
+
+                                <span className="text-2xl text-slate-300 font-bold hidden md:block">→</span>
+                                <span className="text-2xl text-slate-300 font-bold md:hidden">↓</span>
+
+                                {/* 4. 電費 */}
+                                <div className="flex flex-col items-center justify-center p-6 bg-amber-50 rounded-2xl border-2 border-amber-200 w-full md:w-[22%] aspect-[4/3] md:aspect-square relative z-10 shadow-sm transition-transform hover:-translate-y-1">
+                                    <span className="text-4xl md:text-5xl mb-3">⚡</span>
+                                    <p className="font-bold text-base md:text-lg text-amber-900">付台電帳單</p>
+                                    <p className="text-xs md:text-sm text-amber-700/70 mt-1">支撐礦機運作</p>
+                                </div>
+                            </div>
+
+                            {/* 桌面版背景循環線 */}
+                            <div className="hidden md:block absolute top-[50%] left-[11%] right-[11%] h-[160px] border-b-4 border-l-4 border-r-4 border-slate-200 rounded-b-[2rem] z-0">
+                                {/* 左側向上箭頭 (流向礦機) */}
+                                <div className="absolute left-[-13px] top-[40%] text-slate-300">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+                                </div>
+                                {/* 右側向下箭頭 (流向帳單) */}
+                                <div className="absolute right-[-13px] top-[40%] text-slate-300">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                                </div>
+                                {/* 底部文字標籤 */}
+                                <div className="absolute bottom-[-16px] left-[50%] translate-x-[-50%] bg-white px-5 py-1.5 rounded-full text-slate-500 text-sm font-bold border-2 border-slate-200 shadow-sm flex items-center gap-2">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                                    循環支撐運作
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 )
             },
             {
                 id: 5,
-                layout: 'detail',
-                tag: "我的故事",
-                title: "當年的挖礦：挖礦 → 賺以太幣 → 付電費",
-                content: (
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 py-8">
-                        <div className="flex flex-col items-center justify-center p-6 bg-amber-50 rounded-2xl border border-amber-200 min-w-[140px]">
-                            <span className="text-4xl mb-2">⛏️</span>
-                            <p className="font-bold text-lg text-amber-900">挖礦</p>
+                layout: 'split',
+                tag: "轉捩點",
+                title: "比特幣白皮書",
+                leftClasses: "md:w-[45%]",
+                rightClasses: "md:w-[55%]",
+                leftContent: (
+                    <div className="w-full h-full min-h-[300px] bg-white rounded-2xl border-2 border-slate-200 flex flex-col items-center justify-center p-8 shadow-sm">
+                        <div className="w-24 h-24 mb-4 text-slate-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
                         </div>
-                        <span className="text-2xl text-slate-400 font-bold">→</span>
-                        <div className="flex flex-col items-center justify-center p-6 bg-blue-50 rounded-2xl border border-blue-200 min-w-[140px]">
-                            <span className="text-4xl mb-2">Ξ</span>
-                            <p className="font-bold text-lg text-blue-900">賺以太幣</p>
-                        </div>
-                        <span className="text-2xl text-slate-400 font-bold">→</span>
-                        <div className="flex flex-col items-center justify-center p-6 bg-green-50 rounded-2xl border border-green-200 min-w-[140px]">
-                            <span className="text-4xl mb-2">⚡</span>
-                            <p className="font-bold text-lg text-green-900">付電費</p>
+                        <p className="text-lg font-bold text-slate-700">Bitcoin: A Peer-to-Peer Electronic Cash System</p>
+                        <p className="text-slate-500 mt-2">Satoshi Nakamoto</p>
+                    </div>
+                ),
+                rightContent: (
+                    <div className="h-full flex flex-col justify-center">
+                        <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100">
+                            <h3 className="text-xl md:text-2xl font-bold text-slate-800 mb-6">滿腦子問號的好奇心</h3>
+                            <ul className="space-y-6 text-lg md:text-xl text-slate-700">
+                                <li className="flex items-start">
+                                    <span className="text-amber-500 mr-4 font-bold text-2xl leading-none">🤔</span>
+                                    <div>
+                                        <strong className="text-slate-800">價值從哪來？</strong>
+                                        <div className="text-slate-500 text-base mt-1">為什麼機器的產出，能拿去換成新台幣？</div>
+                                    </div>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-amber-500 mr-4 font-bold text-2xl leading-none">📈</span>
+                                    <div>
+                                        <strong className="text-slate-800">還能賺多久？</strong>
+                                        <div className="text-slate-500 text-base mt-1">幣價大起大落，礦機要跑多久才划算？</div>
+                                    </div>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-amber-500 mr-4 font-bold text-2xl leading-none">💡</span>
+                                    <div>
+                                        <strong className="text-slate-800">有什麼應用？</strong>
+                                        <div className="text-slate-500 text-base mt-1">除了挖礦賺錢，聽說還能跑「智慧合約」？</div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 )
             },
             {
                 id: 6,
+                layout: 'detail',
+                tag: "現在的工作",
+                title: "區塊勢 Blocktrend",
+                content: (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 h-full items-center">
+                        {/* 左側：價值主張 */}
+                        <div className="space-y-6">
+                            <div className="p-6 md:p-8 bg-slate-50 rounded-3xl border border-slate-200 shadow-sm transition-transform hover:-translate-y-1">
+                                <h3 className="text-2xl font-bold text-slate-800 mb-2">說人話的區塊鏈圖文</h3>
+                                <p className="text-lg text-slate-600">每週 3 篇原創內容，把艱澀難懂的 Web3 技術，翻譯成白話文。</p>
+                            </div>
+                            <div className="p-6 md:p-8 bg-amber-50 rounded-3xl border border-amber-200 shadow-sm transition-transform hover:-translate-y-1">
+                                <h3 className="text-2xl font-bold text-amber-900 mb-2">網路上最有價值的 10 分鐘</h3>
+                                <p className="text-lg text-amber-800">如果你一週只有 10 分鐘能吸收加密貨幣資訊，讀區塊勢是最好的選擇。其餘時間，你可以隨意探索。</p>
+                            </div>
+                        </div>
+                        {/* 右側：視覺與訂閱資訊 */}
+                        <div className="flex flex-col items-center justify-center space-y-8">
+                            <div className="w-32 h-32 md:w-48 md:h-48 bg-indigo-50 rounded-full border-[8px] border-white shadow-xl flex items-center justify-center text-indigo-500">
+                                <IconBook />
+                            </div>
+                            <div className="flex gap-4 w-full justify-center">
+                                <div className="p-4 bg-white rounded-2xl border border-slate-200 text-center min-w-[120px] shadow-sm">
+                                    <p className="text-sm text-slate-500 font-bold">訂閱制月費</p>
+                                    <p className="text-xl md:text-2xl font-bold text-slate-800">10 USD</p>
+                                </div>
+                                <div className="p-4 bg-white rounded-2xl border border-slate-200 text-center min-w-[120px] shadow-sm">
+                                    <p className="text-sm text-slate-500 font-bold">訂閱制年費</p>
+                                    <p className="text-xl md:text-2xl font-bold text-slate-800">100 USD</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )
+            },
+            {
+                id: 7,
                 layout: 'timeline',
                 title: "流程",
                 steps: [
@@ -147,7 +293,7 @@
                 ]
             },
             {
-                id: 7,
+                id: 8,
                 layout: 'split',
                 title: "入門比特幣：從價值載體到點對點現金",
                 leftContent: (
@@ -179,7 +325,7 @@
                 )
             },
             {
-                id: 8,
+                id: 9,
                 layout: 'split',
                 title: "區塊鏈 vs 銀行：數位面交與優缺點",
                 leftContent: (
@@ -214,7 +360,7 @@
                 )
             },
             {
-                id: 9,
+                id: 10,
                 layout: 'detail',
                 tag: "幣圈的銅臭味",
                 title: "穩定幣與改寫金融規則",
@@ -246,7 +392,7 @@
                 )
             },
             {
-                id: 10,
+                id: 11,
                 layout: 'detail',
                 tag: "資產代幣化",
                 title: "黃金、股票與 DeFi",
@@ -271,7 +417,7 @@
                 )
             },
             {
-                id: 11,
+                id: 12,
                 layout: 'detail',
                 tag: "常用工具",
                 title: "Visa 卡、錢包與跨境投資",
@@ -298,7 +444,7 @@
                 )
             },
             {
-                id: 12,
+                id: 13,
                 layout: 'split',
                 title: "總結與延伸閱讀",
                 leftContent: (
@@ -333,7 +479,7 @@
                 )
             },
             {
-                id: 13,
+                id: 14,
                 layout: 'cover',
                 title: "感謝聆聽",
                 subtitle: "填問卷，送訂閱",
@@ -385,15 +531,15 @@
                         );
                     case 'split':
                         return (
-                            <div className="flex flex-col md:flex-row h-full px-4 md:px-10 py-6 md:py-10 gap-6 md:gap-12 overflow-hidden items-center">
-                                <div className="flex-1 flex flex-col justify-center min-h-min w-full">
-                                    <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mb-6 md:mb-8">
+                            <div className="flex flex-col md:flex-row h-full px-4 md:px-10 py-6 md:py-10 gap-6 md:gap-12 overflow-hidden items-center min-h-0">
+                                <div className={`flex flex-col justify-center h-full min-h-0 w-full ${slide.leftClasses || 'flex-1'}`}>
+                                    <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mb-6 md:mb-8 flex-shrink-0">
                                         {slide.tag && <span className="self-start md:self-auto bg-amber-500 text-white px-4 py-2 rounded-lg text-base md:text-lg font-bold shadow-md">{slide.tag}</span>}
                                         <h2 className="text-2xl md:text-5xl font-bold text-slate-800 border-l-8 border-amber-500 pl-6">{slide.title}</h2>
                                     </div>
-                                    <div className="pr-2">{slide.leftContent}</div>
+                                    <div className="flex-1 pr-2 min-h-0 overflow-hidden flex flex-col justify-center">{slide.leftContent}</div>
                                 </div>
-                                <div className="flex-1 flex flex-col justify-center bg-slate-50 rounded-3xl p-6 md:p-8 w-full h-full max-h-[500px]">
+                                <div className={`flex flex-col justify-center bg-slate-50 rounded-3xl p-6 md:p-8 w-full h-full min-h-0 overflow-hidden ${slide.rightClasses || 'flex-1'}`}>
                                     {slide.rightContent}
                                 </div>
                             </div>
@@ -428,7 +574,7 @@
                                     <span className="self-start md:self-auto bg-amber-500 text-white px-4 py-2 rounded-lg text-base md:text-lg font-bold shadow-md">{slide.tag}</span>
                                     <h2 className="text-2xl md:text-5xl font-bold text-slate-800 leading-tight">{slide.title}</h2>
                                 </div>
-                                <div className="flex-1 bg-white rounded-3xl shadow-lg border border-slate-200 p-6 md:p-10 overflow-hidden flex flex-col justify-center">
+                                <div className="flex-1 bg-white rounded-3xl shadow-lg border border-slate-200 p-6 md:p-10 overflow-hidden flex flex-col justify-center min-h-0">
                                     {slide.content}
                                 </div>
                             </div>
