@@ -47,6 +47,12 @@
         const IconBook = () => (
             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
         );
+        const IconShield = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        );
+        const IconChart = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+        );
 
         const slides = [
             {
@@ -94,10 +100,10 @@
                 layout: 'timeline',
                 title: "流程",
                 steps: [
-                    { phase: "Part 1", title: "入門比特幣", desc: "價值載體數位化、中間人問題、比特幣解法", icon: <IconBitcoin /> },
-                    { phase: "Part 2", title: "幣圈的銅臭味", desc: "穩定幣、套利、改寫金融規則", icon: <IconCoins /> },
-                    { phase: "Part 3", title: "常用工具實戰", desc: "錢包、Visa 卡、跨境投資", icon: <IconTools /> },
-                    { phase: "Part 4", title: "Q&A", desc: "互動提問與討論", icon: <IconWallet /> }
+                    { phase: "Part 1 (上午)", title: "Web3 金流基礎建設", desc: "錢包實戰與私鑰管理、加密貨幣收發體驗", icon: <IconWallet /> },
+                    { phase: "Part 2 (上午)", title: "重大風險與資安拆解", desc: "交易授權陷阱分析、交易所與駭客案例", icon: <IconShield /> },
+                    { phase: "Part 3 (下午)", title: "鏈上金流與獲利邏輯", desc: "DeFi 與穩定幣套利、資金流向追蹤判讀", icon: <IconChart /> },
+                    { phase: "Part 4 (下午)", title: "Web3 商業應用", desc: "跨境支付與穩定幣結算、支付卡與鏈上隱私工具", icon: <IconWallet /> }
                 ]
             },
             {
