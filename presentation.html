@@ -48,7 +48,8 @@
                 layout: 'cover',
                 title: "企業 Web3 實戰工作坊",
                 subtitle: "加密貨幣在搞什麼鬼？用白話拆解加密貨幣",
-                desc: "加入 Slido 互動：活動代碼 #tax1023",
+                slidoUrl: "https://app.sli.do",
+                slidoCode: "tax1023",
                 footer: "區塊勢 × Dinngo"
             },
             {
@@ -320,9 +321,22 @@
                                 </div>
                                 <h1 className="text-4xl md:text-7xl font-bold text-slate-900 mb-6 leading-tight max-w-5xl">{slide.title}</h1>
                                 <p className="text-xl md:text-3xl text-slate-500 mb-10 max-w-3xl leading-relaxed">{slide.subtitle}</p>
-                                {slide.desc && <div className="p-6 bg-white rounded-2xl shadow-md border border-slate-100 max-w-2xl">
-                                    <p className="text-lg md:text-2xl text-slate-700 font-medium">{slide.desc}</p>
-                                </div>}
+                                {slide.slidoUrl && (
+                                    <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 p-6 bg-white rounded-2xl shadow-md border border-slate-100">
+                                        <a href={slide.slidoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-lg md:text-xl rounded-full shadow-lg transition-all hover:scale-105">
+                                            加入 Slido 互動 →
+                                        </a>
+                                        <div className="flex flex-col items-center gap-2">
+                                            <img src={`https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=${encodeURIComponent(slide.slidoUrl)}`} alt="Slido QR" className="w-[100px] h-[100px] rounded-lg" />
+                                            <span className="text-sm text-slate-500">或掃描 · 代碼 #{slide.slidoCode}</span>
+                                        </div>
+                                    </div>
+                                )}
+                                {slide.desc && !slide.slidoUrl && (
+                                    <div className="p-6 bg-white rounded-2xl shadow-md border border-slate-100 max-w-2xl">
+                                        <p className="text-lg md:text-2xl text-slate-700 font-medium">{slide.desc}</p>
+                                    </div>
+                                )}
                                 {slide.footer && <p className="mt-12 text-lg md:text-xl text-slate-400 font-medium">{slide.footer}</p>}
                             </div>
                         );
