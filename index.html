@@ -9,6 +9,7 @@
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         body { font-family: 'Noto Sans TC', sans-serif; }
         html, body { overscroll-behavior: none; }
@@ -46,10 +47,30 @@
             {
                 id: 1,
                 layout: 'cover',
-                title: "加密貨幣在搞什麼鬼？",
-                subtitle: "用白話拆解加密貨幣",
-                desc: "加入 Slido 互動：活動代碼 #tax1023",
-                footer: "區塊勢 許明恩"
+                title: "企業 Web3 實戰工作坊",
+                subtitle: "加密貨幣在搞什麼鬼？",
+                desc: "從外行到坐上談判桌 · 用白話拆解加密貨幣",
+                footer: "區塊勢 × Dinngo · 加入 Slido 互動 #tax1023"
+            },
+            {
+                id: 1.1,
+                layout: 'register',
+                title: "課程資訊",
+                items: [
+                    { icon: "fa-calendar-days", text: "2026 / 03 / 06 (五)  9:00 - 17:00" },
+                    { icon: "fa-location-dot", text: "集思台大會議中心（捷運公館站 2 號出口）" },
+                    { icon: "fa-user-tie", text: "講師｜許明恩（含一對一需求診斷）" },
+                    { icon: "fa-ticket", text: "NT$ 15,800 · 限額 25 人" }
+                ],
+                ctaText: "立即報名",
+                ctaUrl: "https://buy.stripe.com/3cIfZhexbb2fcpOe6o3ks04"
+            },
+            {
+                id: 1.2,
+                layout: 'simple',
+                title: "為什麼你需要這堂課？",
+                subtitle: "知識落差就是決策風險",
+                subtitle2: "聽懂術語 · 分辨真偽 · 看懂金流 · 避免走錯方向"
             },
             {
                 id: 2,
@@ -60,38 +81,110 @@
                     <div className="space-y-6 flex flex-col h-full justify-center">
                         <div className="flex items-center gap-4 p-4 bg-amber-50 rounded-xl border border-amber-100">
                             <p className="text-lg md:text-xl text-amber-900 font-bold">
-                                《區塊勢》創辦人 · 台大電子所碩士
+                                《區塊勢》創辦人 · 台大電子所碩士 · 擅長將技術轉譯為商業語言
                             </p>
                         </div>
                         <ul className="space-y-4">
                             <li className="flex items-start">
-                                <span className="flex-shrink-0 bg-slate-800 text-white font-bold px-3 py-1 rounded text-base mr-4 mt-1">背書</span>
+                                <span className="flex-shrink-0 bg-slate-800 text-white font-bold px-3 py-1 rounded text-base mr-4 mt-1">授課</span>
                                 <div>
-                                    <h4 className="text-xl font-bold text-slate-800 mb-1">受邀單位</h4>
-                                    <p className="text-lg text-slate-600">中央銀行、法官學院、TEDx</p>
+                                    <h4 className="text-xl font-bold text-slate-800 mb-1">金管會、國稅局、法官學院、中央銀行、TEDx</h4>
+                                </div>
+                            </li>
+                            <li className="flex items-start">
+                                <span className="flex-shrink-0 bg-slate-800 text-white font-bold px-3 py-1 rounded text-base mr-4 mt-1">企業</span>
+                                <div>
+                                    <h4 className="text-xl font-bold text-slate-800 mb-1">富邦、中信、中華電信等企業講師</h4>
                                 </div>
                             </li>
                             <li className="flex items-start">
                                 <span className="flex-shrink-0 bg-slate-800 text-white font-bold px-3 py-1 rounded text-base mr-4 mt-1">認證</span>
                                 <div>
-                                    <h4 className="text-xl font-bold text-slate-800 mb-1">Medium Top writer in Bitcoin</h4>
-                                    <p className="text-lg text-slate-600">富昇數位董事 · 2024 以太坊基金會 Devcon 學人</p>
+                                    <h4 className="text-xl font-bold text-slate-800 mb-1">Medium Top writer in Bitcoin · 富昇數位董事 · 2024 以太坊基金會 Devcon 學人</h4>
                                 </div>
                             </li>
                         </ul>
-                        <p className="text-lg text-slate-500 italic">「我也不信」— 先承認質疑，與非幣圈聽眾站在同一邊</p>
+                        <div className="p-4 bg-blue-50 rounded-xl border border-blue-100">
+                            <p className="text-lg font-bold text-blue-800">💬 課後提供企業情境一對一諮詢診斷</p>
+                        </div>
+                    </div>
+                )
+            },
+            {
+                id: 2.1,
+                layout: 'detail',
+                tag: "核心模組",
+                title: "四大特訓模組",
+                content: (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">🛡️ 資產安全實務</h4>
+                            <p className="text-slate-600">建立組織的數位防火牆</p>
+                        </div>
+                        <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">💸 透視加密金流</h4>
+                            <p className="text-slate-600">解構鏈上數據與判讀</p>
+                        </div>
+                        <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">⚖️ 風險漏洞拆解</h4>
+                            <p className="text-slate-600">從重大血淚案例學風控</p>
+                        </div>
+                        <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                            <h4 className="font-bold text-lg text-slate-800 mb-2">🎙️ 企業情境診斷</h4>
+                            <p className="text-slate-600">針對您的需求實戰指導</p>
+                        </div>
+                    </div>
+                )
+            },
+            {
+                id: 2.2,
+                layout: 'detail',
+                tag: "適合對象",
+                title: "誰適合報名工作坊？",
+                content: (
+                    <div className="space-y-6">
+                        <div className="flex items-start gap-4">
+                            <span className="flex-shrink-0 w-10 h-10 bg-amber-500 text-white rounded-full flex items-center justify-center font-bold">1</span>
+                            <div>
+                                <h4 className="font-bold text-xl text-slate-800">業務與商務代表</h4>
+                                <p className="text-slate-600">能跟合作方用共同語言討論產品與方案</p>
+                            </div>
+                        </div>
+                        <div className="flex items-start gap-4">
+                            <span className="flex-shrink-0 w-10 h-10 bg-amber-500 text-white rounded-full flex items-center justify-center font-bold">2</span>
+                            <div>
+                                <h4 className="font-bold text-xl text-slate-800">監管與法遵人員</h4>
+                                <p className="text-slate-600">理解鏈上金流，提升查核與制度設計能力</p>
+                            </div>
+                        </div>
+                        <div className="flex items-start gap-4">
+                            <span className="flex-shrink-0 w-10 h-10 bg-amber-500 text-white rounded-full flex items-center justify-center font-bold">3</span>
+                            <div>
+                                <h4 className="font-bold text-xl text-slate-800">財務與決策主管</h4>
+                                <p className="text-slate-600">評估資產代幣化與新模式可行性</p>
+                            </div>
+                        </div>
                     </div>
                 )
             },
             {
                 id: 3,
-                layout: 'timeline',
-                title: "今日流程",
-                steps: [
-                    { phase: "Part 1", title: "入門比特幣", desc: "價值載體數位化、中間人問題、比特幣解法", icon: <IconBitcoin /> },
-                    { phase: "Part 2", title: "幣圈的銅臭味", desc: "穩定幣、套利、改寫金融規則", icon: <IconCoins /> },
-                    { phase: "Part 3", title: "常用工具實戰", desc: "錢包、Visa 卡、跨境投資", icon: <IconTools /> },
-                    { phase: "Part 4", title: "Q&A", desc: "互動提問與討論", icon: <IconWallet /> }
+                layout: 'agenda',
+                title: "當日實戰流程",
+                sections: [
+                    { title: "上午場：觀念與風控", items: [
+                        { time: "08:30-09:00", title: "報到與入場" },
+                        { time: "09:00-10:30", title: "Web3 金流基礎建設", desc: "錢包實戰、加密貨幣收發體驗" },
+                        { time: "10:30-10:40", title: "課間休息", break: true },
+                        { time: "10:40-12:10", title: "重大風險與資安拆解", desc: "交易簽署陷阱、交易所倒閉案例" },
+                        { time: "12:10-13:10", title: "午餐休息", break: true }
+                    ]},
+                    { title: "下午場：金流與應用", items: [
+                        { time: "13:10-14:40", title: "鏈上金流透視與獲利邏輯", desc: "DeFi 借貸、穩定幣套利、資金流向追蹤" },
+                        { time: "14:40-14:50", title: "課間休息", break: true },
+                        { time: "14:50-16:20", title: "Web3 商業應用", desc: "跨境支付、穩定幣結算、支付卡與隱私工具" },
+                        { time: "16:20-17:00", title: "課程收斂與 Q&A" }
+                    ]}
                 ]
             },
             {
@@ -284,9 +377,21 @@
                 id: 10,
                 layout: 'cover',
                 title: "感謝聆聽",
-                subtitle: "填問卷，送訂閱",
-                desc: "SurveyCake 問卷 + QR code · 課程滿意度回饋",
-                footer: "區塊勢 許明恩 | blocktrend.today"
+                subtitle: "不只是聽懂，而是帶走坐上談判桌的 Web3 決策能力",
+                desc: "填問卷送訂閱 · 課程滿意度回饋",
+                footer: "區塊勢 × Dinngo | blocktrend.today"
+            },
+            {
+                id: 11,
+                layout: 'register',
+                title: "立即報名",
+                items: [
+                    { icon: "fa-location-dot", text: "集思台大會議中心（捷運公館站 2 號出口）" },
+                    { icon: "fa-ticket", text: "NT$ 15,800 · 限額 25 人 · 提供收據可報帳" },
+                    { icon: "fa-file-invoice-dollar", text: "開課前 8 天可退費（扣 10%）；7 天內可轉讓名額" }
+                ],
+                ctaText: "立即報名實戰工作坊 👇",
+                ctaUrl: "https://buy.stripe.com/3cIfZhexbb2fcpOe6o3ks04"
             }
         ];
 
@@ -312,6 +417,47 @@
 
             const renderContent = (slide) => {
                 switch (slide.layout) {
+                    case 'register':
+                        return (
+                            <div className="flex flex-col h-full px-4 md:px-12 py-6 md:py-10 max-w-3xl mx-auto overflow-hidden justify-center">
+                                <h2 className="text-2xl md:text-4xl font-bold text-slate-800 mb-8 border-l-8 border-amber-500 pl-6">{slide.title}</h2>
+                                <div className="space-y-4 mb-8">
+                                    {slide.items.map((item, i) => (
+                                        <div key={i} className="flex items-center gap-4 p-4 bg-white rounded-xl border border-slate-200">
+                                            <i className={`fa-solid ${item.icon} text-amber-500 text-xl w-8 text-center`}></i>
+                                            <span className="text-lg text-slate-700">{item.text}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                                <a href={slide.ctaUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-full py-5 bg-amber-500 hover:bg-amber-600 text-white font-bold text-xl rounded-full shadow-lg transition-all hover:scale-[1.02]">
+                                    {slide.ctaText}
+                                </a>
+                            </div>
+                        );
+                    case 'agenda':
+                        return (
+                            <div className="flex flex-col h-full px-4 md:px-12 py-6 md:py-10 overflow-y-auto">
+                                <h2 className="text-2xl md:text-4xl font-bold text-slate-800 mb-8 border-l-8 border-amber-500 pl-6 flex-shrink-0">{slide.title}</h2>
+                                <div className="space-y-8">
+                                    {slide.sections.map((sec, si) => (
+                                        <div key={si}>
+                                            <h3 className="text-xl font-bold text-amber-600 mb-4">{sec.title}</h3>
+                                            <div className="space-y-3">
+                                                {sec.items.map((item, ii) => (
+                                                    <div key={ii} className={`flex gap-4 p-4 rounded-xl ${item.break ? 'bg-red-50 border border-red-100' : 'bg-slate-50 border border-slate-200'}`}>
+                                                        <span className={`flex-shrink-0 font-mono text-sm font-bold ${item.break ? 'text-red-600' : 'text-slate-600'}`}>{item.time}</span>
+                                                        <div>
+                                                            <div className="font-bold text-slate-800">{item.title}</div>
+                                                            {item.desc && <div className="text-sm text-slate-500 mt-1">{item.desc}</div>}
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        );
                     case 'cover':
                         return (
                             <div className="flex flex-col items-center justify-center h-full text-center px-6 overflow-hidden">
