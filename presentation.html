@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加密貨幣在搞什麼鬼？ | 區塊勢 許明恩</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; }
+        html, body { overscroll-behavior: none; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 overflow-hidden">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useCallback } = React;
+
+        const IconArrowRight = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        );
+        const IconArrowLeft = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+        );
+        const IconBitcoin = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        );
+        const IconWallet = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/><path d="M16 14a2 2 0 0 0 2-2"/></svg>
+        );
+        const IconCoins = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="8" cy="8" r="6"/><circle cx="18" cy="8" r="6"/><path d="M8 14a6 6 0 0 0 10 0"/></svg>
+        );
+        const IconTools = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        );
+        const IconBook = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        );
+
+        const slides = [
+            {
+                id: 1,
+                layout: 'cover',
+                title: "加密貨幣在搞什麼鬼？",
+                subtitle: "用白話拆解加密貨幣",
+                desc: "加入 Slido 互動：活動代碼 #tax1023",
+                footer: "區塊勢 許明恩"
+            },
+            {
+                id: 2,
+                layout: 'detail',
+                tag: "講師介紹",
+                title: "許明恩",
+                content: (
+                    <div className="space-y-6 flex flex-col h-full justify-center">
+                        <div className="flex items-center gap-4 p-4 bg-amber-50 rounded-xl border border-amber-100">
+                            <p className="text-lg md:text-xl text-amber-900 font-bold">
+                                《區塊勢》創辦人 · 台大電子所碩士
+                            </p>
+                        </div>
+                        <ul className="space-y-4">
+                            <li className="flex items-start">
+                                <span className="flex-shrink-0 bg-slate-800 text-white font-bold px-3 py-1 rounded text-base mr-4 mt-1">背書</span>
+                                <div>
+                                    <h4 className="text-xl font-bold text-slate-800 mb-1">受邀單位</h4>
+                                    <p className="text-lg text-slate-600">中央銀行、法官學院、TEDx</p>
+                                </div>
+                            </li>
+                            <li className="flex items-start">
+                                <span className="flex-shrink-0 bg-slate-800 text-white font-bold px-3 py-1 rounded text-base mr-4 mt-1">認證</span>
+                                <div>
+                                    <h4 className="text-xl font-bold text-slate-800 mb-1">Medium Top writer in Bitcoin</h4>
+                                    <p className="text-lg text-slate-600">富昇數位董事 · 2024 以太坊基金會 Devcon 學人</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <p className="text-lg text-slate-500 italic">「我也不信」— 先承認質疑，與非幣圈聽眾站在同一邊</p>
+                    </div>
+                )
+            },
+            {
+                id: 3,
+                layout: 'timeline',
+                title: "今日流程",
+                steps: [
+                    { phase: "Part 1", title: "入門比特幣", desc: "價值載體數位化、中間人問題、比特幣解法", icon: <IconBitcoin /> },
+                    { phase: "Part 2", title: "幣圈的銅臭味", desc: "穩定幣、套利、改寫金融規則", icon: <IconCoins /> },
+                    { phase: "Part 3", title: "常用工具實戰", desc: "錢包、Visa 卡、跨境投資", icon: <IconTools /> },
+                    { phase: "Part 4", title: "Q&A", desc: "互動提問與討論", icon: <IconWallet /> }
+                ]
+            },
+            {
+                id: 4,
+                layout: 'split',
+                title: "入門比特幣：從價值載體到點對點現金",
+                leftContent: (
+                    <div className="space-y-5">
+                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                            <h3 className="text-xl font-bold text-slate-800 mb-2">價值載體數位化</h3>
+                            <p className="text-lg text-slate-600">人類一直在讓價值載體更易攜帶、易交易。貨幣越來越「沒用」— 不一定要能吃、能用、摸得著，最終只剩「交易便利」。</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                            <h3 className="text-xl font-bold text-slate-800 mb-2">中間人的問題</h3>
+                            <ul className="list-disc list-inside text-lg text-slate-600 space-y-1">
+                                <li>洩漏隱私</li>
+                                <li>進入門檻</li>
+                                <li>交易彈性受限</li>
+                            </ul>
+                        </div>
+                    </div>
+                ),
+                rightContent: (
+                    <div className="flex flex-col items-center justify-center h-full space-y-6">
+                        <div className="p-6 bg-slate-100 rounded-2xl border border-slate-200 text-center">
+                            <p className="text-2xl font-bold text-slate-800 mb-2">Peer-to-Peer Electronic Cash System</p>
+                            <p className="text-lg text-slate-600">比特幣白皮書</p>
+                        </div>
+                        <p className="text-lg text-slate-500 text-center max-w-sm">
+                            不靠中間人的資產轉移：Bitcoin 是點對點現金系統，不是投機標的。
+                        </p>
+                    </div>
+                )
+            },
+            {
+                id: 5,
+                layout: 'split',
+                title: "區塊鏈 vs 銀行：數位面交與優缺點",
+                leftContent: (
+                    <div className="space-y-5">
+                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                            <h3 className="text-xl font-bold text-slate-800 mb-2">差異在哪？</h3>
+                            <ul className="list-disc list-inside text-lg text-slate-600 space-y-1">
+                                <li><strong>數位面交</strong>：從錢包到錢包，金流不經銀行</li>
+                                <li><strong>礦工</strong>：區塊鏈的營運者，提供記帳與安全服務</li>
+                            </ul>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="bg-red-50 p-4 rounded-xl border border-red-100">
+                                <h4 className="font-bold text-red-800 mb-2">缺點（去中介代價）</h4>
+                                <p className="text-sm text-slate-600">無實名、不可逆、監管困難</p>
+                            </div>
+                            <div className="bg-green-50 p-4 rounded-xl border border-green-100">
+                                <h4 className="font-bold text-green-800 mb-2">優點</h4>
+                                <p className="text-sm text-slate-600">轉帳像傳 LINE、跨境無差別、區塊鏈是第二次網路革命</p>
+                            </div>
+                        </div>
+                    </div>
+                ),
+                rightContent: (
+                    <div className="flex flex-col justify-center h-full space-y-4">
+                        <div className="p-4 bg-blue-50 rounded-xl border border-blue-100">
+                            <p className="text-lg font-bold text-blue-900">挖礦收入付電費</p>
+                            <p className="text-slate-600">礦機 = 基礎設施營運者的商業行為</p>
+                        </div>
+                        <p className="text-slate-500 text-sm">取得方式：交易所買幣 / 成為礦工挖礦</p>
+                    </div>
+                )
+            },
+            {
+                id: 6,
+                layout: 'detail',
+                tag: "幣圈的銅臭味",
+                title: "穩定幣與改寫金融規則",
+                content: (
+                    <div className="space-y-6 flex flex-col h-full justify-center">
+                        <div className="p-4 bg-blue-50 rounded-xl border border-blue-100">
+                            <h4 className="text-xl font-bold text-blue-800 mb-2">美元穩定幣</h4>
+                            <p className="text-lg text-slate-700">美元放銀行、穩定幣放鏈上，1:1 對應。USDC 有美元儲備背書。</p>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                                <h4 className="text-xl font-bold text-slate-800 mb-2">套利流程</h4>
+                                <p className="text-slate-600">銀行買美元 → 發行商換穩定幣 → 交易所賣成台幣</p>
+                            </div>
+                            <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                                <h4 className="text-xl font-bold text-slate-800 mb-2">用途</h4>
+                                <p className="text-slate-600">TWD/USDT、USDT/JPY 跨幣別中介交易，取代部分銀行電匯</p>
+                            </div>
+                        </div>
+                        <div className="p-5 bg-amber-50 rounded-xl border-l-8 border-amber-400">
+                            <h4 className="font-bold text-amber-900 mb-2">改寫金融規則（三點）</h4>
+                            <ul className="list-disc list-inside text-slate-700 space-y-1">
+                                <li>轉帳速度提升、成本下降</li>
+                                <li>資金利用率提升、顛覆「錢不會跑」的假設</li>
+                                <li>銀行代理關係改變、SWIFT 存在危機</li>
+                            </ul>
+                        </div>
+                    </div>
+                )
+            },
+            {
+                id: 7,
+                layout: 'detail',
+                tag: "資產代幣化",
+                title: "黃金、股票與 DeFi",
+                content: (
+                    <div className="space-y-6 flex flex-col h-full justify-center">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                                <h4 className="font-bold text-slate-800 mb-2">黃金穩定幣</h4>
+                                <p className="text-slate-600">金條放金庫、代幣放鏈上，1:1。類似台灣銀行的黃金存摺，但可鏈上轉移。</p>
+                            </div>
+                            <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                                <h4 className="font-bold text-slate-800 mb-2">股票代幣</h4>
+                                <p className="text-slate-600">Robinhood 已上架。注意：有股價、沒股權（制度落差）。</p>
+                            </div>
+                            <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                                <h4 className="font-bold text-slate-800 mb-2">DeFi 去中心化金融</h4>
+                                <p className="text-slate-600">Aave：沒有銀行的儲蓄。PoolTogether：不會輸的樂透彩（利息當獎金）。</p>
+                            </div>
+                        </div>
+                        <p className="text-lg text-slate-600">幣圈華爾街：加密市場正在長出自己的資本市場與金融工程。</p>
+                    </div>
+                )
+            },
+            {
+                id: 8,
+                layout: 'detail',
+                tag: "常用工具",
+                title: "Visa 卡、錢包與跨境投資",
+                content: (
+                    <div className="space-y-6 flex flex-col h-full justify-center">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                                <h4 className="text-xl font-bold text-slate-800 mb-2">加密貨幣 Visa 卡</h4>
+                                <p className="text-slate-600">USDC（鏈上）↔ SWIFT/JPY（法幣）。直接用 Visa 卡出金，像刷卡消費。</p>
+                            </div>
+                            <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                                <h4 className="text-xl font-bold text-slate-800 mb-2">內建銀行帳戶的錢包</h4>
+                                <p className="text-slate-600">銀行轉帳進錢包 → 穩定幣換新台幣（或反向）。美元 = 穩定幣。</p>
+                            </div>
+                        </div>
+                        <div className="p-5 bg-green-50 rounded-xl border border-green-200">
+                            <h4 className="font-bold text-green-800 mb-2">海外券商投資美股</h4>
+                            <p className="text-lg text-slate-700">新台幣 → 穩定幣 → 錢包直通美股帳戶。省下 99% 跨國電匯成本。</p>
+                        </div>
+                        <div className="p-4 bg-slate-100 rounded-xl">
+                            <p className="text-slate-600"><strong>隱私錢包</strong>：每筆收款都是新地址，避免同一地址暴露所有金流。</p>
+                        </div>
+                    </div>
+                )
+            },
+            {
+                id: 9,
+                layout: 'split',
+                title: "總結與延伸閱讀",
+                leftContent: (
+                    <div className="space-y-6">
+                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                            <h3 className="text-xl font-bold text-slate-800 mb-4">全場三句總結</h3>
+                            <ol className="list-decimal list-inside text-lg text-slate-600 space-y-2">
+                                <li>加密貨幣是數位現金</li>
+                                <li>絕大多數人都在鏈下</li>
+                                <li>但鏈上活動越來越多</li>
+                            </ol>
+                        </div>
+                        <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                            <h4 className="font-bold text-slate-800 mb-3">推薦閱讀</h4>
+                            <ul className="text-slate-600 space-y-1">
+                                <li>《財富自由主義：金錢的多元宇宙》</li>
+                                <li>《以太奇襲：一位 19 歲天才，一場數位與金融革命》</li>
+                                <li>《Read Write Own：開啟 web3 新局的區塊鏈網路趨勢與潛能》</li>
+                            </ul>
+                        </div>
+                    </div>
+                ),
+                rightContent: (
+                    <div className="flex flex-col items-center justify-center h-full space-y-6">
+                        <IconBook />
+                        <div className="text-center">
+                            <h3 className="text-2xl font-bold text-slate-900 mb-2">區塊勢 Blocktrend</h3>
+                            <p className="text-slate-600 mb-2">說人話的區塊鏈圖文 · 每週 3 篇原創</p>
+                            <p className="text-slate-500">blocktrend.today</p>
+                        </div>
+                    </div>
+                )
+            },
+            {
+                id: 10,
+                layout: 'cover',
+                title: "感謝聆聽",
+                subtitle: "填問卷，送訂閱",
+                desc: "SurveyCake 問卷 + QR code · 課程滿意度回饋",
+                footer: "區塊勢 許明恩 | blocktrend.today"
+            }
+        ];
+
+        const App = () => {
+            const [currentSlide, setCurrentSlide] = useState(0);
+
+            const nextSlide = useCallback(() => {
+                if (currentSlide < slides.length - 1) setCurrentSlide(c => c + 1);
+            }, [currentSlide]);
+
+            const prevSlide = useCallback(() => {
+                if (currentSlide > 0) setCurrentSlide(c => c - 1);
+            }, [currentSlide]);
+
+            useEffect(() => {
+                const handleKeyDown = (e) => {
+                    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') nextSlide();
+                    else if (e.key === 'ArrowLeft') prevSlide();
+                };
+                window.addEventListener('keydown', handleKeyDown);
+                return () => window.removeEventListener('keydown', handleKeyDown);
+            }, [nextSlide, prevSlide]);
+
+            const renderContent = (slide) => {
+                switch (slide.layout) {
+                    case 'cover':
+                        return (
+                            <div className="flex flex-col items-center justify-center h-full text-center px-6 overflow-hidden">
+                                <div className="mb-6 md:mb-10">
+                                    <span className="bg-amber-100 text-amber-800 py-2 px-4 rounded-full text-base md:text-lg font-bold tracking-wide uppercase">Workshop</span>
+                                </div>
+                                <h1 className="text-4xl md:text-7xl font-bold text-slate-900 mb-6 leading-tight max-w-5xl">{slide.title}</h1>
+                                <p className="text-xl md:text-3xl text-slate-500 mb-10 max-w-3xl leading-relaxed">{slide.subtitle}</p>
+                                {slide.desc && <div className="p-6 bg-white rounded-2xl shadow-md border border-slate-100 max-w-2xl">
+                                    <p className="text-lg md:text-2xl text-slate-700 font-medium">{slide.desc}</p>
+                                </div>}
+                                {slide.footer && <p className="mt-12 text-lg md:text-xl text-slate-400 font-medium">{slide.footer}</p>}
+                            </div>
+                        );
+                    case 'split':
+                        return (
+                            <div className="flex flex-col md:flex-row h-full px-4 md:px-10 py-6 md:py-10 gap-6 md:gap-12 overflow-hidden items-center">
+                                <div className="flex-1 flex flex-col justify-center min-h-min w-full">
+                                    <h2 className="text-2xl md:text-5xl font-bold text-slate-800 mb-6 md:mb-8 border-l-8 border-amber-500 pl-6">{slide.title}</h2>
+                                    <div className="pr-2">{slide.leftContent}</div>
+                                </div>
+                                <div className="flex-1 flex flex-col justify-center bg-slate-50 rounded-3xl p-6 md:p-8 w-full h-full max-h-[500px]">
+                                    {slide.rightContent}
+                                </div>
+                            </div>
+                        );
+                    case 'timeline':
+                        return (
+                            <div className="flex flex-col h-full px-4 md:px-10 py-6 md:py-12 overflow-hidden justify-center">
+                                <h2 className="text-3xl md:text-5xl font-bold text-slate-800 mb-8 md:mb-12 border-l-8 border-amber-500 pl-6 flex-shrink-0">{slide.title}</h2>
+                                <div className="flex-1 flex flex-col md:flex-row items-center justify-around gap-4 md:gap-6 pb-2 max-h-[500px]">
+                                    {slide.steps.map((step, idx) => (
+                                        <div key={idx} className="relative group flex-1 w-full md:w-auto h-full">
+                                            <div className="bg-white p-5 md:p-6 rounded-3xl shadow-sm border border-slate-200 hover:border-amber-400 hover:shadow-lg transition-all duration-300 h-full flex flex-col items-center text-center z-10 relative justify-center">
+                                                <div className="mb-4 p-3 bg-amber-50 rounded-full text-amber-600 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300 transform group-hover:scale-110">
+                                                    {step.icon}
+                                                </div>
+                                                <div className="text-sm md:text-base font-bold text-slate-400 uppercase tracking-wider mb-2">{step.phase}</div>
+                                                <h3 className="text-xl md:text-2xl font-bold text-slate-800 mb-3">{step.title}</h3>
+                                                <p className="text-sm md:text-lg text-slate-500 leading-relaxed">{step.desc}</p>
+                                            </div>
+                                            {idx < slide.steps.length - 1 && (
+                                                <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-2 bg-slate-200 z-0"></div>
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        );
+                    case 'detail':
+                        return (
+                            <div className="flex flex-col h-full px-4 md:px-12 py-6 md:py-10 max-w-7xl mx-auto overflow-hidden">
+                                <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mb-6 md:mb-8 flex-shrink-0">
+                                    <span className="self-start md:self-auto bg-amber-500 text-white px-4 py-2 rounded-lg text-base md:text-lg font-bold shadow-md">{slide.tag}</span>
+                                    <h2 className="text-2xl md:text-5xl font-bold text-slate-800 leading-tight">{slide.title}</h2>
+                                </div>
+                                <div className="flex-1 bg-white rounded-3xl shadow-lg border border-slate-200 p-6 md:p-10 overflow-hidden flex flex-col justify-center">
+                                    {slide.content}
+                                </div>
+                            </div>
+                        );
+                    default:
+                        return null;
+                }
+            };
+
+            return (
+                <div className="w-full h-screen flex flex-col bg-slate-100">
+                    <main className="flex-1 relative overflow-hidden flex items-center justify-center p-0 md:p-4">
+                        <div className="w-full h-full md:max-w-[95rem] md:h-full bg-white md:rounded-[2rem] shadow-2xl overflow-hidden relative mx-auto my-auto border border-slate-200 flex flex-col">
+                            <div className="w-full h-full p-2 md:p-4 overflow-hidden relative">
+                                {renderContent(slides[currentSlide])}
+                            </div>
+                            <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 bg-slate-900/80 backdrop-blur-md text-white px-3 py-1 md:px-4 md:py-2 rounded-full font-mono text-sm md:text-lg font-bold shadow-lg z-50">
+                                <span className="text-amber-300">{currentSlide + 1}</span> <span className="text-slate-400 mx-1">/</span> {slides.length}
+                            </div>
+                        </div>
+                    </main>
+
+                    <div className="w-full h-14 md:h-16 bg-white border-t border-slate-200 flex items-center justify-between px-6 md:px-12 z-50 shadow-lg shrink-0">
+                        <div className="flex items-center gap-4">
+                            <span className="font-bold text-slate-800 tracking-tight text-base md:text-xl">區塊勢 <span className="text-slate-300 mx-2">|</span> 許明恩</span>
+                        </div>
+                        <div className="flex items-center gap-6">
+                            <button onClick={prevSlide} disabled={currentSlide === 0}
+                                className={`p-2 rounded-full transition-all transform hover:scale-105 ${currentSlide === 0 ? 'text-slate-200 cursor-not-allowed' : 'text-slate-700 bg-slate-100 hover:bg-slate-200 active:bg-slate-300'}`}>
+                                <IconArrowLeft />
+                            </button>
+                            <div className="hidden md:flex gap-3">
+                                {slides.map((_, idx) => (
+                                    <button key={idx} onClick={() => setCurrentSlide(idx)}
+                                        className={`h-2 rounded-full transition-all duration-300 ${idx === currentSlide ? 'bg-amber-500 w-10' : 'bg-slate-300 w-2 hover:bg-slate-400 hover:scale-125'}`} />
+                                ))}
+                            </div>
+                            <button onClick={nextSlide} disabled={currentSlide === slides.length - 1}
+                                className={`p-2 rounded-full transition-all transform hover:scale-105 ${currentSlide === slides.length - 1 ? 'text-slate-200 cursor-not-allowed' : 'text-slate-700 bg-slate-100 hover:bg-slate-200 active:bg-slate-300'}`}>
+                                <IconArrowRight />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
