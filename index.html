@@ -205,18 +205,13 @@
                 leftClasses: "md:w-[45%]",
                 rightClasses: "md:w-[55%]",
                 leftContent: (
-                    <div className="w-full h-full min-h-[300px] bg-white rounded-2xl border-2 border-slate-200 flex flex-col items-center justify-center p-8 shadow-sm">
-                        <div className="w-24 h-24 mb-4 text-slate-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
-                        </div>
-                        <p className="text-lg font-bold text-slate-700">Bitcoin: A Peer-to-Peer Electronic Cash System</p>
-                        <p className="text-slate-500 mt-2">Satoshi Nakamoto</p>
+                    <div className="w-full h-full min-h-[300px] bg-slate-100 rounded-2xl border-2 border-slate-200 flex items-center justify-center overflow-hidden p-2">
+                        <img src="https://duk.tw/YrkB9K.png" alt="比特幣白皮書" className="w-full h-full object-contain rounded-xl drop-shadow-sm" />
                     </div>
                 ),
                 rightContent: (
                     <div className="h-full flex flex-col justify-center">
                         <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100">
-                            <h3 className="text-xl md:text-2xl font-bold text-slate-800 mb-6">滿腦子問號的好奇心</h3>
                             <ul className="space-y-6 text-lg md:text-xl text-slate-700">
                                 <li className="flex items-start">
                                     <span className="text-amber-500 mr-4 font-bold text-2xl leading-none">🤔</span>
@@ -483,7 +478,7 @@
                 layout: 'cover',
                 title: "感謝聆聽",
                 subtitle: "填問卷，送訂閱",
-                desc: "SurveyCake 問卷 + QR code · 課程滿意度回饋",
+                desc: "SurveyCake 問考 + QR code · 課程滿意度回饋",
                 footer: "區塊勢 × Dinngo | blocktrend.today"
             }
         ];
@@ -586,42 +581,59 @@
 
             return (
                 <div className="w-full h-screen flex flex-col bg-slate-100">
-                    <main className="flex-1 relative overflow-hidden flex items-center justify-center p-0 md:p-4">
-                        <div className="w-full h-full md:max-w-[95rem] md:h-full bg-white md:rounded-[2rem] shadow-2xl overflow-hidden relative mx-auto my-auto border border-slate-200 flex flex-col">
-                            <div className="w-full h-full p-2 md:p-4 overflow-hidden relative">
+                    {/* 主要簡報區塊 */}
+                    <main className="flex-1 relative overflow-hidden flex items-center justify-center p-0 md:p-4 lg:p-6">
+                        <div className="w-full h-full md:max-w-[100rem] md:h-full bg-white md:rounded-[2.5rem] shadow-xl overflow-hidden relative mx-auto my-auto border border-slate-200 flex flex-col">
+                            <div className="w-full h-full p-2 md:p-6 overflow-hidden relative">
                                 {renderContent(slides[currentSlide])}
-                            </div>
-                            <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 bg-slate-900/80 backdrop-blur-md text-white px-3 py-1 md:px-4 md:py-2 rounded-full font-mono text-sm md:text-lg font-bold shadow-lg z-50">
-                                <span className="text-amber-300">{currentSlide + 1}</span> <span className="text-slate-400 mx-1">/</span> {slides.length}
                             </div>
                         </div>
                     </main>
 
-                    <div className="w-full h-14 md:h-16 bg-white border-t border-slate-200 flex items-center justify-between px-6 md:px-12 z-50 shadow-lg shrink-0">
-                        <div className="flex items-center gap-3 md:gap-4">
+                    {/* 固定的底部橫條 */}
+                    <div className="w-full h-16 md:h-20 bg-white border-t border-slate-200 flex items-center justify-between px-4 md:px-8 z-50 shadow-[0_-4px_15px_rgba(0,0,0,0.03)] shrink-0">
+                        {/* 左側：提問按鈕與品牌資訊 */}
+                        <div className="flex items-center gap-3 md:gap-5">
                             {slides[0]?.slidoUrl && (
-                                <a href={slides[0].slidoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm md:text-base rounded-full shadow-md transition-all hover:scale-105 shrink-0">
+                                <a href={slides[0].slidoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 md:px-5 md:py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm md:text-base rounded-full shadow-md transition-all hover:scale-105 shrink-0">
                                     即時提問 →
                                 </a>
                             )}
-                            <span className="text-slate-300">|</span>
-                            <span className="font-bold text-slate-800 tracking-tight text-sm md:text-xl">區塊勢 <span className="text-slate-300 mx-2">×</span> Dinngo</span>
+                            <span className="text-slate-300 hidden md:block">|</span>
+                            <span className="font-bold text-slate-800 tracking-tight text-sm md:text-lg hidden md:block">
+                                企業 Web3 工作坊
+                            </span>
+                            <span className="text-slate-300 hidden lg:block">|</span>
+                            <span className="font-bold text-slate-500 tracking-tight text-sm md:text-lg hidden lg:block">
+                                區塊勢 <span className="text-slate-300 mx-1">×</span> Dinngo
+                            </span>
                         </div>
-                        <div className="flex items-center gap-6">
-                            <button onClick={prevSlide}
-                                className="p-2 rounded-full transition-all transform hover:scale-105 text-slate-700 bg-slate-100 hover:bg-slate-200 active:bg-slate-300">
-                                <IconArrowLeft />
-                            </button>
-                            <div className="hidden md:flex gap-3">
-                                {slides.map((_, idx) => (
-                                    <button key={idx} onClick={() => setCurrentSlide(idx)}
-                                        className={`h-2 rounded-full transition-all duration-300 ${idx === currentSlide ? 'bg-amber-500 w-10' : 'bg-slate-300 w-2 hover:bg-slate-400 hover:scale-125'}`} />
-                                ))}
+
+                        {/* 右側：頁碼、進度條與方向控制 */}
+                        <div className="flex items-center gap-4 md:gap-6">
+                            <div className="font-mono text-sm md:text-base font-bold tracking-widest text-slate-500">
+                                <span className="text-amber-500">{currentSlide + 1}</span><span className="mx-1">/</span>{slides.length}
                             </div>
-                            <button onClick={nextSlide}
-                                className="p-2 rounded-full transition-all transform hover:scale-105 text-slate-700 bg-slate-100 hover:bg-slate-200 active:bg-slate-300">
-                                <IconArrowRight />
-                            </button>
+                            
+                            <div className="flex items-center gap-2 md:gap-4">
+                                <button onClick={prevSlide}
+                                    className="p-2 md:p-2.5 rounded-full transition-all transform hover:scale-105 text-slate-600 bg-slate-100 hover:bg-slate-200 hover:text-slate-900 active:bg-slate-300">
+                                    <IconArrowLeft />
+                                </button>
+                                
+                                {/* 桌面版進度條 */}
+                                <div className="hidden lg:flex gap-2 items-center mx-2">
+                                    {slides.map((_, idx) => (
+                                        <button key={idx} onClick={() => setCurrentSlide(idx)}
+                                            className={`h-2 rounded-full transition-all duration-300 ${idx === currentSlide ? 'bg-amber-500 w-8' : 'bg-slate-300 w-2 hover:bg-slate-400 hover:scale-125'}`} />
+                                    ))}
+                                </div>
+
+                                <button onClick={nextSlide}
+                                    className="p-2 md:p-2.5 rounded-full transition-all transform hover:scale-105 text-slate-600 bg-slate-100 hover:bg-slate-200 hover:text-slate-900 active:bg-slate-300">
+                                    <IconArrowRight />
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
