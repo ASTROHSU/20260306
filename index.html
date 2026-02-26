@@ -322,14 +322,9 @@
                                 <h1 className="text-4xl md:text-7xl font-bold text-slate-900 mb-6 leading-tight max-w-5xl">{slide.title}</h1>
                                 <p className="text-xl md:text-3xl text-slate-500 mb-10 max-w-3xl leading-relaxed">{slide.subtitle}</p>
                                 {slide.slidoUrl && (
-                                    <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 p-6 bg-white rounded-2xl shadow-md border border-slate-100">
-                                        <a href={slide.slidoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-lg md:text-xl rounded-full shadow-lg transition-all hover:scale-105">
-                                            即時匿名提問 →
-                                        </a>
-                                        <div className="flex flex-col items-center gap-2">
-                                            <img src={`https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=${encodeURIComponent(slide.slidoUrl)}`} alt="Slido QR" className="w-[100px] h-[100px] rounded-lg" />
-                                            <span className="text-sm text-slate-500">或掃描 · 代碼 #{slide.slidoCode}</span>
-                                        </div>
+                                    <div className="flex flex-col items-center gap-2 p-4">
+                                        <img src={`https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=${encodeURIComponent(slide.slidoUrl)}`} alt="Slido QR" className="w-[80px] h-[80px] rounded-lg" />
+                                        <span className="text-sm text-slate-500">掃描提問 · 代碼 #{slide.slidoCode}</span>
                                     </div>
                                 )}
                                 {slide.desc && !slide.slidoUrl && (
@@ -406,10 +401,14 @@
                     </main>
 
                     <div className="w-full h-14 md:h-16 bg-white border-t border-slate-200 flex items-center justify-between px-6 md:px-12 z-50 shadow-lg shrink-0">
-                        <div className="flex items-center gap-4">
-                            <a href="info.html" className="text-slate-500 hover:text-amber-600 text-sm md:text-base font-medium transition-colors">今日資訊</a>
+                        <div className="flex items-center gap-3 md:gap-4">
+                            {slides[0]?.slidoUrl && (
+                                <a href={slides[0].slidoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm md:text-base rounded-full shadow-md transition-all hover:scale-105 shrink-0">
+                                    即時匿名提問 →
+                                </a>
+                            )}
                             <span className="text-slate-300">|</span>
-                            <span className="font-bold text-slate-800 tracking-tight text-base md:text-xl">區塊勢 <span className="text-slate-300 mx-2">×</span> Dinngo</span>
+                            <span className="font-bold text-slate-800 tracking-tight text-sm md:text-xl">區塊勢 <span className="text-slate-300 mx-2">×</span> Dinngo</span>
                         </div>
                         <div className="flex items-center gap-6">
                             <button onClick={prevSlide} disabled={currentSlide === 0}
