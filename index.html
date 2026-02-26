@@ -18,7 +18,7 @@
     <div id="root">
         <div class="min-h-screen flex flex-col items-center justify-center p-8 text-center text-slate-500" id="fallback">
             <p class="mb-4">載入中…</p>
-            <a href="info.html" class="text-amber-600 hover:underline">若無法顯示，請點此查看今日資訊</a>
+            <a href="info.html" class="text-amber-600 hover:underline">若無法顯示，請點此查看活動資訊</a>
         </div>
     </div>
 
@@ -91,7 +91,7 @@
             {
                 id: 3,
                 layout: 'timeline',
-                title: "今日流程",
+                title: "流程",
                 steps: [
                     { phase: "Part 1", title: "入門比特幣", desc: "價值載體數位化、中間人問題、比特幣解法", icon: <IconBitcoin /> },
                     { phase: "Part 2", title: "幣圈的銅臭味", desc: "穩定幣、套利、改寫金融規則", icon: <IconCoins /> },
@@ -326,7 +326,7 @@
                                 <h1 className="text-4xl md:text-7xl font-bold text-slate-900 mb-6 leading-tight max-w-5xl">{slide.title}</h1>
                                 <p className="text-xl md:text-3xl text-slate-500 mb-10 max-w-3xl leading-relaxed">{slide.subtitle}</p>
                                 <a href="info.html" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-8 py-4 bg-amber-500 hover:bg-amber-600 text-white font-bold text-lg md:text-xl rounded-full shadow-lg transition-all hover:scale-105">
-                                    今日活動資訊 →
+                                    活動資訊 →
                                 </a>
                                 {slide.desc && !slide.slidoUrl && (
                                     <div className="p-6 bg-white rounded-2xl shadow-md border border-slate-100 max-w-2xl">
