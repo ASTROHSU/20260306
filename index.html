@@ -97,6 +97,71 @@
             },
             {
                 id: 3,
+                layout: 'detail',
+                tag: "我的故事",
+                title: "我為什麼在這？",
+                content: (
+                    <div className="space-y-6 flex flex-col h-full justify-center">
+                        <p className="text-2xl md:text-3xl font-bold text-slate-800">
+                            一開始，我也不相信。
+                        </p>
+                        <div className="space-y-4 text-lg md:text-xl text-slate-600">
+                            <p>為什麼開始接觸加密貨幣與區塊鏈？</p>
+                            <p>為什麼把這當成全職工作？</p>
+                            <p className="text-slate-500 italic">用我的故事來說。</p>
+                        </div>
+                    </div>
+                )
+            },
+            {
+                id: 4,
+                layout: 'split',
+                title: "2017 年 8 月：朋友來我家放以太幣礦機",
+                leftContent: (
+                    <div className="space-y-4">
+                        <div className="aspect-video bg-slate-100 rounded-2xl border-2 border-slate-200 flex items-center justify-center overflow-hidden">
+                            {/* 可替換 src 為你的礦機照片網址 */}
+                            <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=600&h=400&fit=crop" alt="以太坊礦機" className="w-full h-full object-cover rounded-2xl" />
+                        </div>
+                        <p className="text-sm text-slate-500">當年的礦機長這樣</p>
+                    </div>
+                ),
+                rightContent: (
+                    <div className="space-y-6">
+                        <p className="text-lg md:text-xl text-slate-700 leading-relaxed">
+                            有朋友來我家，放了一台以太幣礦機。
+                        </p>
+                        <p className="text-lg text-slate-600">那時候的挖礦是什麼樣子？</p>
+                        <p className="text-lg text-slate-600">這就是我開始接觸區塊鏈的起點。</p>
+                    </div>
+                )
+            },
+            {
+                id: 5,
+                layout: 'detail',
+                tag: "我的故事",
+                title: "當年的挖礦：挖礦 → 賺以太幣 → 付電費",
+                content: (
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 py-8">
+                        <div className="flex flex-col items-center justify-center p-6 bg-amber-50 rounded-2xl border border-amber-200 min-w-[140px]">
+                            <span className="text-4xl mb-2">⛏️</span>
+                            <p className="font-bold text-lg text-amber-900">挖礦</p>
+                        </div>
+                        <span className="text-2xl text-slate-400 font-bold">→</span>
+                        <div className="flex flex-col items-center justify-center p-6 bg-blue-50 rounded-2xl border border-blue-200 min-w-[140px]">
+                            <span className="text-4xl mb-2">Ξ</span>
+                            <p className="font-bold text-lg text-blue-900">賺以太幣</p>
+                        </div>
+                        <span className="text-2xl text-slate-400 font-bold">→</span>
+                        <div className="flex flex-col items-center justify-center p-6 bg-green-50 rounded-2xl border border-green-200 min-w-[140px]">
+                            <span className="text-4xl mb-2">⚡</span>
+                            <p className="font-bold text-lg text-green-900">付電費</p>
+                        </div>
+                    </div>
+                )
+            },
+            {
+                id: 6,
                 layout: 'timeline',
                 title: "流程",
                 steps: [
@@ -107,7 +172,7 @@
                 ]
             },
             {
-                id: 4,
+                id: 7,
                 layout: 'split',
                 title: "入門比特幣：從價值載體到點對點現金",
                 leftContent: (
@@ -139,7 +204,7 @@
                 )
             },
             {
-                id: 5,
+                id: 8,
                 layout: 'split',
                 title: "區塊鏈 vs 銀行：數位面交與優缺點",
                 leftContent: (
@@ -174,7 +239,7 @@
                 )
             },
             {
-                id: 6,
+                id: 9,
                 layout: 'detail',
                 tag: "幣圈的銅臭味",
                 title: "穩定幣與改寫金融規則",
@@ -206,7 +271,7 @@
                 )
             },
             {
-                id: 7,
+                id: 10,
                 layout: 'detail',
                 tag: "資產代幣化",
                 title: "黃金、股票與 DeFi",
@@ -231,7 +296,7 @@
                 )
             },
             {
-                id: 8,
+                id: 11,
                 layout: 'detail',
                 tag: "常用工具",
                 title: "Visa 卡、錢包與跨境投資",
@@ -258,7 +323,7 @@
                 )
             },
             {
-                id: 9,
+                id: 12,
                 layout: 'split',
                 title: "總結與延伸閱讀",
                 leftContent: (
@@ -293,7 +358,7 @@
                 )
             },
             {
-                id: 10,
+                id: 13,
                 layout: 'cover',
                 title: "感謝聆聽",
                 subtitle: "填問卷，送訂閱",
