@@ -326,12 +326,9 @@
                                 </div>
                                 <h1 className="text-4xl md:text-7xl font-bold text-slate-900 mb-6 leading-tight max-w-5xl">{slide.title}</h1>
                                 <p className="text-xl md:text-3xl text-slate-500 mb-10 max-w-3xl leading-relaxed">{slide.subtitle}</p>
-                                {slide.slidoUrl && (
-                                    <div className="flex flex-col items-center gap-2 p-4">
-                                        <img src={`https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=${encodeURIComponent(slide.slidoUrl)}`} alt="Slido QR" className="w-[80px] h-[80px] rounded-lg" />
-                                        <span className="text-sm text-slate-500">掃描提問 · 代碼 #{slide.slidoCode}</span>
-                                    </div>
-                                )}
+                                <a href="info.html" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-8 py-4 bg-amber-500 hover:bg-amber-600 text-white font-bold text-lg md:text-xl rounded-full shadow-lg transition-all hover:scale-105">
+                                    今日活動資訊 →
+                                </a>
                                 {slide.desc && !slide.slidoUrl && (
                                     <div className="p-6 bg-white rounded-2xl shadow-md border border-slate-100 max-w-2xl">
                                         <p className="text-lg md:text-2xl text-slate-700 font-medium">{slide.desc}</p>
