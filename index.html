@@ -342,6 +342,31 @@
             },
             {
                 id: 10,
+                layout: 'detail',
+                tag: "入門比特幣",
+                title: "貨幣越來越「沒用」",
+                content: (
+                    <div className="h-full flex flex-col items-center justify-center py-6 md:py-10" style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.04) 1px, transparent 1px)', backgroundSize: '24px 24px', backgroundColor: '#f8fafc' }}>
+                        <h3 className="text-2xl md:text-4xl font-bold text-slate-900 mb-8 md:mb-12">貨幣越來越「沒用」</h3>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full max-w-4xl">
+                            {[
+                                { num: '1', text: '要能吃' },
+                                { num: '2', text: '要能用' },
+                                { num: '3', text: '摸得著' },
+                                { num: '4', text: '方便交易' }
+                            ].map((item, i) => (
+                                <div key={i} className="bg-blue-800 rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center text-center shadow-lg border border-blue-900/30">
+                                    <span className="text-4xl md:text-5xl font-bold text-white mb-3">{item.num}</span>
+                                    <div className="w-12 md:w-16 h-0.5 bg-white mb-4 rounded-full" />
+                                    <span className="text-lg md:text-xl font-bold text-amber-300">{item.text}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )
+            },
+            {
+                id: 11,
                 layout: 'split',
                 title: "價值載體的演進與中間人",
                 leftContent: (
@@ -373,7 +398,7 @@
                 )
             },
             {
-                id: 11,
+                id: 12,
                 layout: 'split',
                 title: "區塊鏈 vs 銀行：數位面交與優缺點",
                 leftContent: (
@@ -408,7 +433,7 @@
                 )
             },
             {
-                id: 12,
+                id: 13,
                 layout: 'detail',
                 tag: "幣圈的銅臭味",
                 title: "穩定幣與改寫金融規則",
@@ -440,7 +465,7 @@
                 )
             },
             {
-                id: 13,
+                id: 14,
                 layout: 'detail',
                 tag: "資產代幣化",
                 title: "黃金、股票與 DeFi",
@@ -465,7 +490,7 @@
                 )
             },
             {
-                id: 14,
+                id: 15,
                 layout: 'detail',
                 tag: "常用工具",
                 title: "Visa 卡、錢包與跨境投資",
@@ -492,7 +517,7 @@
                 )
             },
             {
-                id: 15,
+                id: 16,
                 layout: 'split',
                 title: "總結與延伸閱讀",
                 leftContent: (
@@ -527,7 +552,7 @@
                 )
             },
             {
-                id: 16,
+                id: 17,
                 layout: 'cover',
                 title: "感謝聆聽",
                 subtitle: "填問卷，送訂閱",
