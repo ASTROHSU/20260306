@@ -1347,9 +1347,15 @@
                 title: "回饋問卷",
                 content: (
                     <div className="flex flex-col items-center justify-center h-full py-6 px-4">
-                        <div className="w-full max-w-2xl min-h-[280px] p-8 bg-slate-50 rounded-2xl border-2 border-dashed border-slate-300 flex flex-col items-center justify-center text-center">
-                            <p className="text-slate-500 mb-4">連結與 QR Code 放置區</p>
-                            <div className="w-40 h-40 bg-white rounded-xl border border-slate-200 flex items-center justify-center text-slate-400 text-sm">QR Code</div>
+                        <div className="w-full max-w-2xl p-8 bg-slate-50 rounded-2xl border-2 border-slate-200 shadow-sm flex flex-col items-center justify-center text-center space-y-6">
+                            <p className="text-lg md:text-xl text-slate-700 font-medium">填寫問卷，課後贈送<strong className="text-amber-600">區塊勢</strong>與<strong className="text-amber-600">精選週報</strong>一年份訂閱</p>
+                            <a href="https://www.surveycake.com/s/14kR7" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 bg-amber-500 hover:bg-amber-600 text-white font-bold text-lg rounded-full shadow-lg transition-all hover:scale-105">
+                                填寫回饋問卷 →
+                            </a>
+                            <div className="flex flex-col items-center pt-2">
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Fwww.surveycake.com%2Fs%2F14kR7" alt="回饋問卷 QR Code" className="w-40 h-40 rounded-xl bg-white p-2 border border-slate-200 shadow-sm" />
+                                <p className="text-slate-500 text-sm mt-3">掃描 QR Code 填寫</p>
+                            </div>
                         </div>
                     </div>
                 )
