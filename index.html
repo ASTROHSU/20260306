@@ -1470,13 +1470,10 @@
                                 <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 md:mb-6 tracking-tight">{slide.title}</h2>
                                 {slide.subtitle && <p className="text-xl md:text-2xl text-slate-300 font-medium max-w-2xl mb-6 md:mb-8">{slide.subtitle}</p>}
                                 {slide.slidoUrl && (
-                                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-10 mt-2">
-                                        <a href={slide.slidoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-full shadow-lg transition-all hover:scale-105">
-                                            即時提問 →
-                                        </a>
+                                    <div className="flex flex-col items-center justify-center mt-4">
                                         <div className="flex flex-col items-center">
-                                            <img src={`https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(slide.slidoUrl)}`} alt="即時提問 QR Code" className="w-40 h-40 rounded-xl bg-white p-2 border-2 border-slate-600 shadow-lg" />
-                                            {slide.slidoCode && <p className="text-slate-400 text-sm mt-2 font-medium">活動代碼 {slide.slidoCode}</p>}
+                                            <img src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(slide.slidoUrl)}`} alt="即時提問 QR Code" className="w-48 h-48 md:w-52 md:h-52 rounded-xl bg-white p-2 border-2 border-slate-600 shadow-lg" />
+                                            {slide.slidoCode && <p className="text-slate-400 text-sm mt-4 font-medium">slido.com 活動代碼 {slide.slidoCode}</p>}
                                         </div>
                                     </div>
                                 )}
