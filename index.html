@@ -314,17 +314,9 @@
             },
             {
                 id: 8,
-                layout: 'detail',
-                tag: "段落分頁",
+                layout: 'section',
                 title: "入門比特幣",
-                content: (
-                    <div className="flex flex-col items-center justify-center h-full text-center py-10">
-                        <div className="mb-6">
-                            <IconBitcoin />
-                        </div>
-                        <p className="text-xl md:text-2xl text-slate-600 font-bold">從價值載體到點對點現金</p>
-                    </div>
-                )
+                subtitle: "從價值載體到點對點現金"
             },
             {
                 id: 9,
@@ -621,6 +613,16 @@
                                 </div>
                             </div>
                         );
+                    case 'section':
+                        return (
+                            <div className="flex flex-col items-center justify-center h-full text-center px-6">
+                                <div className="mb-6 md:mb-8 text-amber-400">
+                                    <IconBitcoin />
+                                </div>
+                                <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 md:mb-6 tracking-tight">{slide.title}</h2>
+                                <p className="text-xl md:text-2xl text-slate-300 font-medium max-w-2xl">{slide.subtitle}</p>
+                            </div>
+                        );
                     case 'detail':
                         return (
                             <div className="flex flex-col h-full px-4 md:px-12 py-6 md:py-10 max-w-7xl mx-auto overflow-hidden">
@@ -642,8 +644,8 @@
                 <div className="w-full h-screen flex flex-col bg-slate-100">
                     {/* 主要簡報區塊 */}
                     <main className="flex-1 relative overflow-hidden flex items-center justify-center p-0 md:p-4 lg:p-6">
-                        <div className="w-full h-full md:max-w-[100rem] md:h-full bg-white md:rounded-[2.5rem] shadow-xl overflow-hidden relative mx-auto my-auto border border-slate-200 flex flex-col">
-                            <div className="w-full h-full p-2 md:p-6 overflow-hidden relative">
+                        <div className={`w-full h-full md:max-w-[100rem] md:h-full md:rounded-[2.5rem] shadow-xl overflow-hidden relative mx-auto my-auto flex flex-col ${slides[currentSlide].layout === 'section' ? 'bg-slate-800 border border-slate-600' : 'bg-white border border-slate-200'}`}>
+                            <div className={`w-full h-full overflow-hidden relative ${slides[currentSlide].layout === 'section' ? 'p-0' : 'p-2 md:p-6'}`}>
                                 {renderContent(slides[currentSlide])}
                             </div>
                         </div>
