@@ -1362,7 +1362,7 @@
                 id: 76,
                 layout: 'cover',
                 title: "感謝參與",
-                buttonText: "課後群組（限時一個月）",
+                buttonText: "加入課後群組",
                 footer: "區塊勢 × Dinngo"
             }
         ];
@@ -1392,9 +1392,11 @@
                     case 'cover':
                         return (
                             <div className="flex flex-col items-center justify-center h-full text-center px-6 overflow-hidden">
+                                {slide.id !== 76 && (
                                 <div className="mb-6 md:mb-10">
                                     <span className="bg-amber-100 text-amber-800 py-2 px-4 rounded-full text-base md:text-lg font-bold tracking-wide uppercase">實戰特訓</span>
                                 </div>
+                                )}
                                 <h1 className="text-4xl md:text-7xl font-bold text-slate-900 mb-6 leading-tight max-w-5xl">{slide.title}</h1>
                                 {slide.subtitle && <p className="text-xl md:text-3xl text-slate-500 mb-10 max-w-3xl leading-relaxed">{slide.subtitle}</p>}
                                 <a href="info.html" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-8 py-4 bg-amber-500 hover:bg-amber-600 text-white font-bold text-lg md:text-xl rounded-full shadow-lg transition-all hover:scale-105">
