@@ -1290,13 +1290,24 @@
                 title: "總結",
                 content: (
                     <div className="flex flex-col items-center justify-center h-full py-6">
-                        <div className="w-full max-w-4xl">
-                            <div className="p-6 md:p-8 bg-white rounded-2xl border-2 border-slate-200 shadow-sm hover:border-amber-200 hover:shadow-md transition-all">
-                                <ol className="list-decimal list-inside text-lg md:text-xl text-slate-700 space-y-4">
-                                    <li>加密貨幣是數位現金</li>
-                                    <li>絕大多數人都在鏈下</li>
-                                    <li>但鏈上活動越來越多</li>
-                                </ol>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 w-full max-w-5xl">
+                            <div className="p-6 md:p-8 bg-white rounded-2xl border-2 border-slate-200 shadow-sm hover:border-amber-200 hover:shadow-md transition-all flex flex-col items-center text-center">
+                                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-amber-50 flex items-center justify-center mb-4">
+                                    <span className="text-2xl md:text-3xl font-bold text-amber-600">1</span>
+                                </div>
+                                <p className="text-slate-600 text-xl md:text-2xl">加密貨幣是數位現金</p>
+                            </div>
+                            <div className="p-6 md:p-8 bg-white rounded-2xl border-2 border-slate-200 shadow-sm hover:border-amber-200 hover:shadow-md transition-all flex flex-col items-center text-center">
+                                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-amber-50 flex items-center justify-center mb-4">
+                                    <span className="text-2xl md:text-3xl font-bold text-amber-600">2</span>
+                                </div>
+                                <p className="text-slate-600 text-xl md:text-2xl">絕大多數人都在鏈下</p>
+                            </div>
+                            <div className="p-6 md:p-8 bg-white rounded-2xl border-2 border-slate-200 shadow-sm hover:border-amber-200 hover:shadow-md transition-all flex flex-col items-center text-center">
+                                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-amber-50 flex items-center justify-center mb-4">
+                                    <span className="text-2xl md:text-3xl font-bold text-amber-600">3</span>
+                                </div>
+                                <p className="text-slate-600 text-xl md:text-2xl">但鏈上活動越來越多</p>
                             </div>
                         </div>
                     </div>
@@ -1309,13 +1320,24 @@
                 title: "閱讀推薦",
                 content: (
                     <div className="flex flex-col items-center justify-center h-full py-6">
-                        <div className="w-full max-w-4xl">
-                            <div className="p-6 md:p-8 bg-white rounded-2xl border-2 border-slate-200 shadow-sm hover:border-amber-200 hover:shadow-md transition-all">
-                                <ol className="list-decimal list-inside text-lg md:text-xl text-slate-700 space-y-4">
-                                    <li>財富自由主義：金錢的多元宇宙</li>
-                                    <li>以太奇襲：一位 19 歲天才，一場數位與金融革命</li>
-                                    <li>Read Write Own：開啟 web3 新局的區塊鏈網路趨勢與潛能</li>
-                                </ol>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 w-full max-w-5xl">
+                            <div className="p-6 md:p-8 bg-white rounded-2xl border-2 border-slate-200 shadow-sm hover:border-amber-200 hover:shadow-md transition-all flex flex-col items-center text-center">
+                                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-amber-50 flex items-center justify-center mb-4">
+                                    <span className="text-2xl md:text-3xl font-bold text-amber-600">1</span>
+                                </div>
+                                <p className="text-slate-600 text-lg md:text-xl">財富自由主義：金錢的多元宇宙</p>
+                            </div>
+                            <div className="p-6 md:p-8 bg-white rounded-2xl border-2 border-slate-200 shadow-sm hover:border-amber-200 hover:shadow-md transition-all flex flex-col items-center text-center">
+                                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-amber-50 flex items-center justify-center mb-4">
+                                    <span className="text-2xl md:text-3xl font-bold text-amber-600">2</span>
+                                </div>
+                                <p className="text-slate-600 text-lg md:text-xl">以太奇襲：一位 19 歲天才，一場數位與金融革命</p>
+                            </div>
+                            <div className="p-6 md:p-8 bg-white rounded-2xl border-2 border-slate-200 shadow-sm hover:border-amber-200 hover:shadow-md transition-all flex flex-col items-center text-center">
+                                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-amber-50 flex items-center justify-center mb-4">
+                                    <span className="text-2xl md:text-3xl font-bold text-amber-600">3</span>
+                                </div>
+                                <p className="text-slate-600 text-lg md:text-xl">Read Write Own：開啟 web3 新局的區塊鏈網路趨勢與潛能</p>
                             </div>
                         </div>
                     </div>
@@ -1337,38 +1359,10 @@
             },
             {
                 id: 75,
-                layout: 'split',
-                title: "總結與延伸閱讀",
-                leftContent: (
-                    <div className="space-y-6">
-                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-                            <h3 className="text-xl font-bold text-slate-800 mb-4">全場三句總結</h3>
-                            <ol className="list-decimal list-inside text-lg text-slate-600 space-y-2">
-                                <li>加密貨幣是數位現金</li>
-                                <li>絕大多數人都在鏈下</li>
-                                <li>但鏈上活動越來越多</li>
-                            </ol>
-                        </div>
-                        <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
-                            <h4 className="font-bold text-slate-800 mb-3">推薦閱讀</h4>
-                            <ul className="text-slate-600 space-y-1">
-                                <li>《財富自由主義：金錢的多元宇宙》</li>
-                                <li>《以太奇襲：一位 19 歲天才，一場數位與金融革命》</li>
-                                <li>《Read Write Own：開啟 web3 新局的區塊鏈網路趨勢與潛能》</li>
-                            </ul>
-                        </div>
-                    </div>
-                ),
-                rightContent: (
-                    <div className="flex flex-col items-center justify-center h-full space-y-6">
-                        <IconBook />
-                        <div className="text-center">
-                            <h3 className="text-2xl font-bold text-slate-900 mb-2">區塊勢 Blocktrend</h3>
-                            <p className="text-slate-600 mb-2">說人話的區塊鏈圖文 · 每週 3 篇原創</p>
-                            <p className="text-slate-500">blocktrend.today</p>
-                        </div>
-                    </div>
-                )
+                layout: 'section',
+                tag: "",
+                title: "Q&A",
+                subtitle: "歡迎提問"
             },
             {
                 id: 76,
