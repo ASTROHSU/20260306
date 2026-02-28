@@ -1499,28 +1499,21 @@
                             </span>
                         </div>
 
-                        {/* 右側：方向控制、進度條與頁碼 */}
+                        {/* 右側：左右按鈕、當前標籤、頁碼 */}
                         <div className="flex items-center gap-3 md:gap-5">
-                            <div className="flex items-center gap-1 md:gap-2">
+                            <div className="flex items-center gap-2">
                                 <button onClick={prevSlide}
                                     className="p-1.5 md:p-2 rounded-full transition-all transform hover:scale-105 text-slate-600 bg-slate-100 hover:bg-slate-200 hover:text-slate-900 active:bg-slate-300">
                                     <IconArrowLeft />
                                 </button>
-                                
-                                {/* 桌面版進度條 */}
-                                <div className="hidden lg:flex gap-1.5 items-center mx-2">
-                                    {slides.map((_, idx) => (
-                                        <button key={idx} onClick={() => setCurrentSlide(idx)}
-                                            className={`h-1.5 rounded-full transition-all duration-300 ${idx === currentSlide ? 'bg-amber-500 w-6' : 'bg-slate-300 w-1.5 hover:bg-slate-400 hover:scale-125'}`} />
-                                    ))}
-                                </div>
-
+                                <span className="min-w-[6rem] md:min-w-[8rem] max-w-[10rem] md:max-w-[14rem] truncate text-center text-xs md:text-sm font-medium text-slate-500 px-2" title={slides[currentSlide].tag || slides[currentSlide].title}>
+                                    {slides[currentSlide].tag || slides[currentSlide].title || '\u00A0'}
+                                </span>
                                 <button onClick={nextSlide}
                                     className="p-1.5 md:p-2 rounded-full transition-all transform hover:scale-105 text-slate-600 bg-slate-100 hover:bg-slate-200 hover:text-slate-900 active:bg-slate-300">
                                     <IconArrowRight />
                                 </button>
                             </div>
-
                             <div className="font-mono text-xs md:text-sm font-bold tracking-widest text-slate-500 border-l border-slate-200 pl-3 md:pl-5">
                                 <span className="text-amber-500">{currentSlide + 1}</span><span className="mx-1">/</span>{slides.length}
                             </div>
