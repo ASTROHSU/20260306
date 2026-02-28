@@ -973,7 +973,7 @@
                 id: 46,
                 layout: 'detail',
                 tag: "鏈上的金融應用",
-                title: "穩定幣、美元價差套利",
+                title: "穩定幣美元價差",
                 content: (
                     <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 h-full min-h-0 p-4">
                         <div className="flex-1 min-h-0 w-full flex items-center justify-center">
@@ -989,7 +989,7 @@
                 id: 47,
                 layout: 'detail',
                 tag: "鏈上的金融應用",
-                title: "穩定幣、美元套利",
+                title: "價差套利",
                 content: (
                     <div className="flex items-center justify-center h-full min-h-0 p-4">
                         <img src="https://i.urusai.cc/PACVj.png" alt="穩定幣、美元套利" className="max-h-full max-w-full w-auto object-contain rounded-2xl border-2 border-slate-200 shadow-lg" />
@@ -1013,11 +1013,23 @@
                 tag: "鏈上的金融應用",
                 title: "去中心化金融",
                 content: (
-                    <div className="flex flex-col h-full justify-center gap-6 max-w-2xl mx-auto">
-                        <ol className="space-y-4 text-xl md:text-2xl text-slate-700 list-decimal list-inside">
-                            <li><strong>Aave</strong>：沒有銀行的儲蓄</li>
-                            <li><strong>PoolTogether</strong>：不會輸的樂透彩</li>
-                        </ol>
+                    <div className="flex flex-col items-center justify-center h-full py-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full max-w-4xl">
+                            <div className="p-6 md:p-8 bg-white rounded-2xl border-2 border-slate-200 shadow-sm hover:border-amber-200 hover:shadow-md transition-all flex flex-col items-center text-center">
+                                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-amber-50 flex items-center justify-center mb-4">
+                                    <span className="text-2xl md:text-3xl font-bold text-amber-600">1</span>
+                                </div>
+                                <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-2">Aave</h3>
+                                <p className="text-slate-600 text-xl md:text-2xl">沒有銀行的儲蓄</p>
+                            </div>
+                            <div className="p-6 md:p-8 bg-white rounded-2xl border-2 border-slate-200 shadow-sm hover:border-amber-200 hover:shadow-md transition-all flex flex-col items-center text-center">
+                                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-amber-50 flex items-center justify-center mb-4">
+                                    <span className="text-2xl md:text-3xl font-bold text-amber-600">2</span>
+                                </div>
+                                <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-2">PoolTogether</h3>
+                                <p className="text-slate-600 text-xl md:text-2xl">不會輸的樂透彩</p>
+                            </div>
+                        </div>
                     </div>
                 )
             },
@@ -1045,6 +1057,86 @@
             },
             {
                 id: 52,
+                layout: 'section',
+                title: "鏈上的經濟應用",
+                subtitle: "穩定幣、錢包與跨境"
+            },
+            {
+                id: 53,
+                layout: 'detail',
+                tag: "鏈上的經濟應用",
+                title: "穩定幣中介交易",
+                content: (
+                    <div className="flex items-center justify-center h-full min-h-0 p-4">
+                        <img src="https://i.urusai.cc/gXVNi.png" alt="穩定幣中介交易" className="max-h-full max-w-full w-auto object-contain rounded-2xl border-2 border-slate-200 shadow-lg" />
+                    </div>
+                )
+            },
+            {
+                id: 54,
+                layout: 'detail',
+                tag: "鏈上的經濟應用",
+                title: "改寫金融規則",
+                content: (
+                    <div className="flex flex-col items-center justify-center h-full py-6">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 w-full max-w-5xl">
+                            <div className="p-6 md:p-8 bg-white rounded-2xl border-2 border-slate-200 shadow-sm hover:border-amber-200 hover:shadow-md transition-all flex flex-col items-center text-center">
+                                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-amber-50 flex items-center justify-center mb-4">
+                                    <span className="text-2xl md:text-3xl font-bold text-amber-600">1</span>
+                                </div>
+                                <p className="text-slate-600 text-xl md:text-2xl">轉帳速度提升、轉帳成本下降</p>
+                            </div>
+                            <div className="p-6 md:p-8 bg-white rounded-2xl border-2 border-slate-200 shadow-sm hover:border-amber-200 hover:shadow-md transition-all flex flex-col items-center text-center">
+                                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-amber-50 flex items-center justify-center mb-4">
+                                    <span className="text-2xl md:text-3xl font-bold text-amber-600">2</span>
+                                </div>
+                                <p className="text-slate-600 text-xl md:text-2xl">資金利用率提升、顛覆錢不會跑的假設</p>
+                            </div>
+                            <div className="p-6 md:p-8 bg-white rounded-2xl border-2 border-slate-200 shadow-sm hover:border-amber-200 hover:shadow-md transition-all flex flex-col items-center text-center">
+                                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-amber-50 flex items-center justify-center mb-4">
+                                    <span className="text-2xl md:text-3xl font-bold text-amber-600">3</span>
+                                </div>
+                                <p className="text-slate-600 text-xl md:text-2xl">銀行代理關係改變、SWIFT 存在危機</p>
+                            </div>
+                        </div>
+                    </div>
+                )
+            },
+            {
+                id: 55,
+                layout: 'detail',
+                tag: "鏈上的經濟應用",
+                title: "內建銀行帳戶的錢包",
+                content: (
+                    <div className="flex items-center justify-center h-full min-h-0 p-4">
+                        <img src="https://l.urusai.cc/fSvQK.png" alt="內建銀行帳戶的錢包" className="max-h-full max-w-full w-auto object-contain rounded-2xl border-2 border-slate-200 shadow-lg" />
+                    </div>
+                )
+            },
+            {
+                id: 56,
+                layout: 'detail',
+                tag: "鏈上的經濟應用",
+                title: "海外券商投資美股",
+                content: (
+                    <div className="flex items-center justify-center h-full min-h-0 p-4">
+                        <img src="https://i.urusai.cc/qIOCH.png" alt="海外券商投資美股" className="max-h-full max-w-full w-auto object-contain rounded-2xl border-2 border-slate-200 shadow-lg" />
+                    </div>
+                )
+            },
+            {
+                id: 57,
+                layout: 'detail',
+                tag: "鏈上的經濟應用",
+                title: "省下99%跨國電匯成本",
+                content: (
+                    <div className="flex items-center justify-center h-full min-h-0 p-4">
+                        <img src="https://i.urusai.cc/xvpsW.png" alt="省下99%跨國電匯成本" className="max-h-full max-w-full w-auto object-contain rounded-2xl border-2 border-slate-200 shadow-lg" />
+                    </div>
+                )
+            },
+            {
+                id: 58,
                 layout: 'detail',
                 tag: "幣圈的銅臭味",
                 title: "穩定幣與改寫金融規則",
@@ -1076,7 +1168,7 @@
                 )
             },
             {
-                id: 53,
+                id: 59,
                 layout: 'detail',
                 tag: "資產代幣化",
                 title: "黃金、股票與 DeFi",
@@ -1101,7 +1193,7 @@
                 )
             },
             {
-                id: 54,
+                id: 60,
                 layout: 'detail',
                 tag: "常用工具",
                 title: "Visa 卡、錢包與跨境投資",
@@ -1128,7 +1220,7 @@
                 )
             },
             {
-                id: 55,
+                id: 61,
                 layout: 'split',
                 title: "總結與延伸閱讀",
                 leftContent: (
@@ -1163,7 +1255,7 @@
                 )
             },
             {
-                id: 56,
+                id: 62,
                 layout: 'cover',
                 title: "感謝聆聽",
                 subtitle: "填問卷，送訂閱",
