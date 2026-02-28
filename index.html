@@ -551,27 +551,15 @@
                 tag: "發錢實作",
                 title: "建立新錢包、大功告成",
                 content: (
-                    <div className="flex flex-col items-center justify-center h-full py-4">
-                        <p className="text-lg text-slate-600 mb-6 text-center">創建 Trust Wallet 流程</p>
-                        <div className="flex flex-wrap justify-center gap-6 md:gap-8">
-                            <div className="flex flex-col items-center">
-                                <div className="w-[140px] md:w-[180px] rounded-3xl border-4 border-slate-200 overflow-hidden shadow-lg bg-slate-100" style={{ aspectRatio: '9/19.5' }}>
-                                    <img src="https://placehold.co/280x606/e2e8f0/64748b?text=步驟1" alt="Trust Wallet 創建步驟 1" className="w-full h-full object-cover" />
-                                </div>
-                                <span className="mt-2 font-bold text-slate-600">步驟 1</span>
-                            </div>
-                            <div className="flex flex-col items-center">
-                                <div className="w-[140px] md:w-[180px] rounded-3xl border-4 border-slate-200 overflow-hidden shadow-lg bg-slate-100" style={{ aspectRatio: '9/19.5' }}>
-                                    <img src="https://placehold.co/280x606/e2e8f0/64748b?text=步驟2" alt="Trust Wallet 創建步驟 2" className="w-full h-full object-cover" />
-                                </div>
-                                <span className="mt-2 font-bold text-slate-600">步驟 2</span>
-                            </div>
-                            <div className="flex flex-col items-center">
-                                <div className="w-[140px] md:w-[180px] rounded-3xl border-4 border-slate-200 overflow-hidden shadow-lg bg-slate-100" style={{ aspectRatio: '9/19.5' }}>
-                                    <img src="https://placehold.co/280x606/e2e8f0/64748b?text=步驟3" alt="Trust Wallet 創建步驟 3" className="w-full h-full object-cover" />
-                                </div>
-                                <span className="mt-2 font-bold text-slate-600">步驟 3</span>
-                            </div>
+                    <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 h-full py-4">
+                        <div className="w-[140px] md:w-[180px] rounded-3xl border-4 border-slate-200 overflow-hidden shadow-lg bg-slate-100" style={{ aspectRatio: '9/19.5' }}>
+                            <img src="https://placehold.co/280x606/e2e8f0/64748b?text=步驟1" alt="Trust Wallet 創建步驟 1" className="w-full h-full object-cover" />
+                        </div>
+                        <div className="w-[140px] md:w-[180px] rounded-3xl border-4 border-slate-200 overflow-hidden shadow-lg bg-slate-100" style={{ aspectRatio: '9/19.5' }}>
+                            <img src="https://placehold.co/280x606/e2e8f0/64748b?text=步驟2" alt="Trust Wallet 創建步驟 2" className="w-full h-full object-cover" />
+                        </div>
+                        <div className="w-[140px] md:w-[180px] rounded-3xl border-4 border-slate-200 overflow-hidden shadow-lg bg-slate-100" style={{ aspectRatio: '9/19.5' }}>
+                            <img src="https://placehold.co/280x606/e2e8f0/64748b?text=步驟3" alt="Trust Wallet 創建步驟 3" className="w-full h-full object-cover" />
                         </div>
                     </div>
                 )
@@ -580,24 +568,49 @@
                 id: 17,
                 layout: 'detail',
                 tag: "發錢實作",
-                title: "領空投",
+                title: "貼地址、領空投",
                 content: (
-                    <div className="flex flex-col items-center justify-center gap-6 py-4">
-                        <p className="text-lg md:text-xl text-slate-600 text-center max-w-2xl">
-                            只要有對方的錢包地址，就可以看到對方的交易記錄。鏈上金流只要有地址就能追蹤——前面用以太幣空投給大家，所以可以直接從鏈上看到所有人的金流記錄。
-                        </p>
-                        <a href="https://www.oklink.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-amber-600 hover:text-amber-700 font-bold text-lg underline">
-                            在 OKLink 查詢鏈上交易 →
-                        </a>
-                        <div className="w-full max-w-3xl">
-                            <img src="https://i.urusai.cc/gIGej.png" alt="OKLink 鏈上交易查詢畫面" className="w-full h-auto rounded-2xl border-2 border-slate-200 shadow-lg object-contain" />
-                            <p className="text-center text-sm text-slate-500 mt-2">OKLink 交易畫面：輸入錢包地址即可追蹤鏈上金流</p>
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 py-6">
+                        <div className="flex flex-col items-center gap-5 text-center md:text-left">
+                            <p className="text-lg text-slate-600 max-w-md">掃描 QR Code 或點擊按鈕，填寫您的錢包地址（0x 開頭）即可領空投。</p>
+                            <a href="https://www.surveycake.com/s/qQdXk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-bold text-lg px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all">
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                                填寫問卷 · 貼上地址
+                            </a>
+                        </div>
+                        <div className="flex flex-col items-center">
+                            <div className="bg-white rounded-2xl p-4 border-2 border-slate-200 shadow-sm">
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.surveycake.com/s/qQdXk" alt="問卷 QR Code" className="w-[200px] h-[200px] rounded-lg" />
+                                <p className="text-center text-sm font-medium text-slate-500 mt-2">掃描填寫</p>
+                            </div>
                         </div>
                     </div>
                 )
             },
             {
                 id: 18,
+                layout: 'detail',
+                tag: "發錢實作",
+                title: "轉帳資訊匿名公開",
+                content: (
+                    <div className="flex flex-col h-full min-h-0 py-2">
+                        <div className="flex-shrink-0 space-y-3 mb-4">
+                            <p className="text-lg text-slate-600">
+                                只要有對方的錢包地址，就可以看到對方的交易記錄。鏈上金流只要有地址就能追蹤——前面用以太幣空投給大家，所以可以直接從鏈上看到所有人的金流記錄。
+                            </p>
+                            <a href="https://www.oklink.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-amber-600 hover:text-amber-700 font-bold text-lg underline">
+                                在 OKLink 查詢鏈上交易 →
+                            </a>
+                        </div>
+                        <div className="flex-1 min-h-0 flex items-center justify-center">
+                            <img src="https://i.urusai.cc/gIGej.png" alt="OKLink 鏈上交易查詢畫面" className="max-h-[280px] md:max-h-[340px] w-auto object-contain rounded-2xl border-2 border-slate-200 shadow-lg" />
+                        </div>
+                        <p className="flex-shrink-0 text-center text-sm text-slate-500 mt-2">OKLink：輸入錢包地址即可追蹤鏈上金流</p>
+                    </div>
+                )
+            },
+            {
+                id: 19,
                 layout: 'detail',
                 tag: "幣圈的銅臭味",
                 title: "穩定幣與改寫金融規則",
@@ -629,7 +642,7 @@
                 )
             },
             {
-                id: 19,
+                id: 20,
                 layout: 'detail',
                 tag: "資產代幣化",
                 title: "黃金、股票與 DeFi",
@@ -654,7 +667,7 @@
                 )
             },
             {
-                id: 20,
+                id: 21,
                 layout: 'detail',
                 tag: "常用工具",
                 title: "Visa 卡、錢包與跨境投資",
@@ -681,7 +694,7 @@
                 )
             },
             {
-                id: 21,
+                id: 22,
                 layout: 'split',
                 title: "總結與延伸閱讀",
                 leftContent: (
@@ -716,7 +729,7 @@
                 )
             },
             {
-                id: 22,
+                id: 23,
                 layout: 'cover',
                 title: "感謝聆聽",
                 subtitle: "填問卷，送訂閱",
