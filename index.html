@@ -1499,16 +1499,24 @@
                             </span>
                         </div>
 
-                        {/* 右側：左右按鈕、當前標籤、頁碼 */}
+                        {/* 右側：左右按鈕、三段式標籤（上一個｜當前｜下一個）、頁碼 */}
                         <div className="flex items-center gap-3 md:gap-5">
                             <div className="flex items-center gap-2">
                                 <button onClick={prevSlide}
                                     className="p-1.5 md:p-2 rounded-full transition-all transform hover:scale-105 text-slate-600 bg-slate-100 hover:bg-slate-200 hover:text-slate-900 active:bg-slate-300">
                                     <IconArrowLeft />
                                 </button>
-                                <span className="min-w-[6rem] md:min-w-[8rem] max-w-[10rem] md:max-w-[14rem] truncate text-center text-xs md:text-sm font-medium text-slate-500 px-2" title={slides[currentSlide].tag || slides[currentSlide].title}>
-                                    {slides[currentSlide].tag || slides[currentSlide].title || '\u00A0'}
-                                </span>
+                                <div className="flex items-stretch rounded-lg border border-slate-200 bg-slate-50 overflow-hidden min-w-0 max-w-[16rem] md:max-w-[22rem]">
+                                    <span className="flex-1 min-w-0 truncate text-xs md:text-sm text-slate-400 px-2 py-1.5 border-r border-slate-200 text-center" title={currentSlide > 0 ? (slides[currentSlide - 1].tag || slides[currentSlide - 1].title) : ''}>
+                                        {currentSlide > 0 ? (slides[currentSlide - 1].tag || slides[currentSlide - 1].title || '—') : '—'}
+                                    </span>
+                                    <span className="flex-1 min-w-0 truncate text-xs md:text-sm font-semibold text-amber-600 bg-amber-50 px-2 py-1.5 border-r border-amber-200 text-center" title={slides[currentSlide].tag || slides[currentSlide].title}>
+                                        {slides[currentSlide].tag || slides[currentSlide].title || '—'}
+                                    </span>
+                                    <span className="flex-1 min-w-0 truncate text-xs md:text-sm text-slate-400 px-2 py-1.5 text-center" title={currentSlide < slides.length - 1 ? (slides[currentSlide + 1].tag || slides[currentSlide + 1].title) : ''}>
+                                        {currentSlide < slides.length - 1 ? (slides[currentSlide + 1].tag || slides[currentSlide + 1].title || '—') : '—'}
+                                    </span>
+                                </div>
                                 <button onClick={nextSlide}
                                     className="p-1.5 md:p-2 rounded-full transition-all transform hover:scale-105 text-slate-600 bg-slate-100 hover:bg-slate-200 hover:text-slate-900 active:bg-slate-300">
                                     <IconArrowRight />
