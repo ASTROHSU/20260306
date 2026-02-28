@@ -975,7 +975,18 @@
                 title: "USDC的美元儲備",
                 content: (
                     <div className="flex items-center justify-center h-full min-h-0 p-4">
-                        <img src="https://i.urusai.cc/6e72U.png" alt="USDC的美元儲備" className="max-h-full max-w-full w-auto object-contain rounded-2xl border-2 border-slate-200 shadow-lg" />
+                        <img src="https://i.urusai.cc/Ydjmk.png" alt="USDC的美元儲備" className="max-h-full max-w-full w-auto object-contain rounded-2xl border-2 border-slate-200 shadow-lg" />
+                    </div>
+                )
+            },
+            {
+                id: 72,
+                layout: 'detail',
+                tag: "鏈上的金融應用",
+                title: "各種美元穩定幣",
+                content: (
+                    <div className="flex items-center justify-center h-full min-h-0 p-4">
+                        <img src="https://i.urusai.cc/6e72U.png" alt="各種美元穩定幣" className="max-h-full max-w-full w-auto object-contain rounded-2xl border-2 border-slate-200 shadow-lg" />
                     </div>
                 )
             },
@@ -1455,7 +1466,7 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" x2="6" y1="2" y2="4"/><line x1="10" x2="10" y1="2" y2="4"/><line x1="14" x2="14" y1="2" y2="4"/></svg>
                                 </div>
                                 <h2 className="text-3xl md:text-5xl font-bold text-white mb-3 md:mb-4 tracking-tight">{slide.title}</h2>
-                                <p className="text-lg md:text-xl text-slate-400 font-medium mb-8 md:mb-10">喝杯咖啡，稍後回來</p>
+                                <p className="text-lg md:text-xl text-slate-400 font-medium mb-8 md:mb-10">{slide.title === "午餐時間" ? "吃頓飯，稍後回來" : "喝杯咖啡，稍後回來"}</p>
                                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                                     {slide.slidoUrl && (
                                         <a href={slide.slidoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-full shadow-lg transition-all hover:scale-105">
