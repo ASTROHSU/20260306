@@ -1,14 +1,11 @@
 ---
-description: 完成編輯後自動推送到 GitHub
+description: 只在使用者要求時才推送到 GitHub
 alwaysApply: true
 ---
 
-# 自動推送到 GitHub
+# 手動推送到 GitHub
 
-在此專案中完成任何檔案編輯後，請自動執行以下步驟：
+在此專案中**不要自動**幫使用者執行 `git add`、`git commit`、`git push`。
 
-1. `git add` 已修改的檔案
-2. `git commit` 並使用簡潔的 commit message（例如：feat: 描述變更、fix: 修復問題）
-3. `git push` 推送到 origin
-
-無需詢問使用者是否要推送，直接執行即可。
+- 如需推送到 GitHub，**只在使用者明確開口要求**（例如「幫我更新 GitHub」）時再執行。
+- 其他情況僅修改檔案即可，保持本機未必同步到遠端沒關係。
