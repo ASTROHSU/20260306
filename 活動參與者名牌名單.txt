@@ -1,38 +1,38 @@
-═══════════════════════════════════════════════════════════════
+═══════════════════════════════════════════════════════════════════════════════
                     活動參與者名牌名單（紙本製作用）
-═══════════════════════════════════════════════════════════════
+═══════════════════════════════════════════════════════════════════════════════
 整理日期：2025年3月5日
 說明：依原始名單整理，供現場夥伴製作紙本名牌使用。
 「姓名」欄空白者為原始名單未提供中文姓名，可依 email 或現場確認後補寫。
-───────────────────────────────────────────────────────────────
+───────────────────────────────────────────────────────────────────────────────
 
-序號  姓名                備註 / Email
-───────────────────────────────────────────────────────────────
- 1    高茂鈞              jun.kao@udngroup.com
- 2    范振揮              zhenhui.fan@udngroup.com
- 3    Mindy Ho            MindyHo@taiwanmobile.com
- 4    （待確認）          hianpei@sfb.gov.tw
- 5    （待確認）          yuchi755@sfb.gov.tw
- 6    鄧秋明              steventeng@mds.com.tw
- 7    林岳平              jaco@mds.com.tw
- 8    黃玲瑛              cariel@mds.com.tw
- 9    陳怡君              coco@mds.com.tw
-10    周宜屏              ariel@mds.com.tw
-11    李佳琳              saralee@mds.com.tw
-12    劉玉惠              angel@mds.com.tw
-13    洪靖雯              valen@mds.com.tw
-14    周世達              clement@mds.com.tw
-15    林家宏              glaygogo@mds.com.tw
-16    陳依瑤              mitila125@mds.com.tw
-17    Shieh Ron           ron.shieh@pklotcorp.com
-18    John Wu             johnwu@iforensics.com.tw
-19    （待確認）          h810925@gmail.com
-20    （待確認）          joey.su@cathayholdings.com.tw
-21    （待確認）          hsinteng@cathayholdings.com.tw
+序號  姓名                公司/單位            Email
+───────────────────────────────────────────────────────────────────────────────
+ 1    高茂鈞              聯合報               jun.kao@udngroup.com
+ 2    范振揮              聯合報               zhenhui.fan@udngroup.com
+ 3    Mindy Ho            台灣大哥大           MindyHo@taiwanmobile.com
+ 4    裴高正              金管會               hianpei@sfb.gov.tw
+ 5    郭育齊              金管會               yuchi755@sfb.gov.tw
+ 6    鄧秋明              三商電腦             steventeng@mds.com.tw
+ 7    林岳平              三商電腦             jaco@mds.com.tw
+ 8    黃玲瑛              三商電腦             cariel@mds.com.tw
+ 9    陳怡君              三商電腦             coco@mds.com.tw
+10    周宜屏              三商電腦             ariel@mds.com.tw
+11    李佳琳              三商電腦             saralee@mds.com.tw
+12    劉玉惠              三商電腦             angel@mds.com.tw
+13    洪靖雯              三商電腦             valen@mds.com.tw
+14    周世達              三商電腦             clement@mds.com.tw
+15    林家宏              三商電腦             glaygogo@mds.com.tw
+16    陳依瑤              三商電腦             mitila125@mds.com.tw
+17    Shieh Ron           車麻吉               ron.shieh@pklotcorp.com
+18    John Wu             鑒真數位             johnwu@iforensics.com.tw
+19    謝盛宇              －                   h810925@gmail.com
+20    （待確認）          國泰金控             joey.su@cathayholdings.com.tw
+21    （待確認）          國泰金控             hsinteng@cathayholdings.com.tw
 
-───────────────────────────────────────────────────────────────
+───────────────────────────────────────────────────────────────────────────────
 共 21 位參與者
-───────────────────────────────────────────────────────────────
+───────────────────────────────────────────────────────────────────────────────
 
 
 【僅列「姓名」欄－可直接剪貼製作名牌】
@@ -40,8 +40,8 @@
 高茂鈞
 范振揮
 Mindy Ho
-（待確認）
-（待確認）
+裴高正
+郭育齊
 鄧秋明
 林岳平
 黃玲瑛
@@ -55,6 +55,31 @@ Mindy Ho
 陳依瑤
 Shieh Ron
 John Wu
+謝盛宇
 （待確認）
 （待確認）
-（待確認）
+
+
+【姓名 ＋ 公司/單位－可製作含單位之名牌】
+───────────────────────────────────────────────────────────────
+高茂鈞　聯合報
+范振揮　聯合報
+Mindy Ho　台灣大哥大
+裴高正　金管會
+郭育齊　金管會
+鄧秋明　三商電腦
+林岳平　三商電腦
+黃玲瑛　三商電腦
+陳怡君　三商電腦
+周宜屏　三商電腦
+李佳琳　三商電腦
+劉玉惠　三商電腦
+洪靖雯　三商電腦
+周世達　三商電腦
+林家宏　三商電腦
+陳依瑤　三商電腦
+Shieh Ron　車麻吉
+John Wu　鑒真數位
+謝盛宇　－
+（待確認）　國泰金控
+（待確認）　國泰金控
