@@ -1440,6 +1440,28 @@
                                         <p className="text-lg md:text-2xl text-slate-700 font-medium">{slide.desc}</p>
                                     </div>
                                 )}
+                                {slide.id === 76 && (
+                                    <div className="mt-8 flex flex-col items-center gap-6">
+                                        <div className="bg-white rounded-3xl border-2 border-slate-200 shadow-lg p-6 md:p-8 flex flex-col items-center gap-4">
+                                            <img
+                                                src="https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=https%3A%2F%2Fline.me%2Fti%2Fg2%2F9CVfDhKHaMvWo_0XVNeVtNGkla-dzCs_KkLj9w%3Futm_source%3Dinvitation%26utm_medium%3Dlink_copy%26utm_campaign%3Ddefault"
+                                                alt="加入課後 LINE 群組 QR Code"
+                                                className="w-[220px] h-[220px] md:w-[260px] md:h-[260px] rounded-2xl bg-white"
+                                            />
+                                            <p className="text-base md:text-lg text-slate-600 font-medium max-w-xl">
+                                                掃描 QR Code 加入「企業 Web3 實戰工作坊」課後一個月 LINE 群組，一起交流後續問題與實作心得。
+                                            </p>
+                                            <a
+                                                href="https://line.me/ti/g2/9CVfDhKHaMvWo_0XVNeVtNGkla-dzCs_KkLj9w?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-lg md:text-xl rounded-full shadow-md transition-all hover:scale-105"
+                                            >
+                                                直接點這裡加入群組
+                                            </a>
+                                        </div>
+                                    </div>
+                                )}
                                 {slide.footer && <p className="mt-12 text-lg md:text-xl text-slate-400 font-medium">{slide.footer}</p>}
                             </div>
                         );
