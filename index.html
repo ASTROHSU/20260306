@@ -105,7 +105,8 @@
                 layout: 'cover',
                 title: "企業 Web3 實戰工作坊",
                 subtitle: "從入門到坐上談判桌",
-                wifiInfo: "活動當天顯示",
+                wifiAccount: "GIS C04",
+                wifiPassword: "85B1A08C04",
                 slidoUrl: "https://app.sli.do/event/v5E2ZdcCzhE9FHG2EfHh7z",
                 slidoCode: "web3"
             },
@@ -1427,14 +1428,18 @@
                                         </a>
                                     </div>
                                 )}
-                                {slide.wifiInfo && (
+                                {(slide.wifiAccount != null || slide.wifiInfo) && (
                                     <div className="mt-4 mb-6 p-4 md:p-6 bg-slate-100 rounded-2xl border-2 border-slate-200 shadow-sm inline-flex items-center gap-4">
                                         <div className="bg-amber-100 p-3 rounded-full text-amber-600">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12.55a11 11 0 0 1 14.08 0" /><path d="M1.42 9a16 16 0 0 1 21.16 0" /><path d="M8.53 16.11a6 6 0 0 1 6.95 0" /><circle cx="12" cy="20" r="1.5" /></svg>
                                         </div>
                                         <div className="text-left">
                                             <p className="text-sm md:text-base font-bold text-slate-500">Wi-Fi 網路</p>
-                                            <p className="text-lg md:text-xl font-bold text-slate-800">{slide.wifiInfo}</p>
+                                            {slide.wifiAccount != null ? (
+                                                <p className="text-lg md:text-xl font-bold text-slate-800">帳號 {slide.wifiAccount}<br />密碼 {slide.wifiPassword}</p>
+                                            ) : (
+                                                <p className="text-lg md:text-xl font-bold text-slate-800">{slide.wifiInfo}</p>
+                                            )}
                                         </div>
                                     </div>
                                 )}
